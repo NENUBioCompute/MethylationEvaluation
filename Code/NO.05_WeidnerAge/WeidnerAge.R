@@ -22,8 +22,8 @@ else {
 }
 
 # 填补缺失值，采用均值填充
-for (i in 1:ncol(dat0)){
-  dat0[,i][is.na(dat0[,i])] <- 0.5
+for (i in 1:nrow(dat0)) {
+  dat0[i,][is.na(dat0[i,])] <- sum(dat0[i,], na.rm = T) / length(dat0[i,])
 }
 
 
