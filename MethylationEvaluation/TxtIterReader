@@ -1,0 +1,124 @@
+import re
+
+
+class TxtIterReader:
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def iterRead(file, count):
+        """
+        逐行读取文件
+        :param file: str 文件名
+        :param count: int 需要一次读取的行数
+        :return: list 返回需要行数的数据
+        """
+        fileContext = []
+        with open(file) as f:
+            for line in f:
+                fileContext.append(line.strip())
+                if len(fileContext) < count:
+                    continue
+                yield fileContext
+                fileContext.clear()
+        if fileContext:
+            yield fileContext
+        f.close()
+
+    def splitFile(self, file):
+        """
+        分割头文件和表达矩阵
+        :param file: str 文件路径名
+        :return: list 头文件和表达矩阵
+        """
+        phenoData = []  # 存放头文件
+        expressionMatrix = []  # 存放表达矩阵
+        tag = False
+        for lines in self.iterRead(file, 10):
+            for line in lines:
+                if tag:
+                    if '!series_matrix_table_end' in line:
+                        break
+                    expressionMatrix.append(line.strip())
+                else:
+                    if '!series_matrix_table_begin' in line:
+                        tag = True
+                    phenoData.append(line.strip())
+        # 保存头文件
+        with open('phenoData.txt', 'w') as wf:
+            for item in phenoData:
+                wf.write(item)
+                wf.write('\n')
+        wf.close()
+        # 保存表达矩阵
+        with open('expressionMatrix.csv', 'w') as wf:
+            for item in expressionMatrix:
+                wf.write(re.sub(r'[\s+]', ',', item))
+                wf.write('\n')
+        wf.close()
+        TxtIterReader.processPheno(phenoData)
+        return phenoData, expressionMatrix
+
+    def processPheno(self, file):
+        """
+        处理头文件，生成新的头文件
+        :param file: str 文件名
+        :return: dict/csv 新的头文件
+        """
+        phenoData, _ = self.splitFile(file)
+        for item in phenoData:
+            if 'age' in item:
+                age = re.sub('age: ', '', item).replace('"', '').split('\t')
+            if 'sex' in item:
+                sex = re.sub('sex: ', '', item).replace('"', '').split('\t')
+            if 'sample_id' in item:
+                sample_id = item.replace('"', '').split(' ')
+            if 'source_name' in item:
+                tissues = item.replace('"', '').split('\t')
+        age = [eval(item) for item in age[1:]]
+        sex = sex[1:]
+        sample_id = sample_id[1:]
+        tissues = tissues[1:]
+        diease = ['' for i in range(len(age))]
+        race = ['' for i in range(len(age))]
+        newPhenoData = {
+            'ID_REF': sample_id,
+            'Sex': sex,
+            'Age': age,
+            'Tissue': tissues,
+            'Diease': diease,
+            'Race': race
+        }
+        print(newPhenoData)
+        return newPhenoData
+
+    def splitExpressionMatrix(self, file, row, col):
+        """
+        按照传入的行列范围分割表达矩阵
+        :param file: str 文件名
+        :param row: tuple 需要切割的行范围
+        :param col: tuple 需要切割的列范围
+        :return: dataframe 切割后的表达矩阵
+        """
+        for lines in self.iterRead(file, 10):
+            for line in lines:
+                pass
+        return 0
+
+    def staticData(self, file):
+        """
+        统计数据
+        :param file: str 文件名
+        :return:
+        """
+        pass
+
+
+if __name__ == '__main__':
+    txt = TxtIterReader()
+    txt.splitFile('../RawData/GSE20242_series_matrix.txt')
+    # txt.splitExpressionMatrix('../RawData/GSE20242_series_matrix.txt')
+    # for i in txt.splitFile('../RawData/GSE20242_series_matrix.txt'):
+    #     print(i)
+    # for i in txt.iterRead('../RawData/GSE20242_series_matrix.txt', 10):
+    #     print(i)
