@@ -1,4 +1,6 @@
 import re
+import csv
+import pandas as pd
 
 
 class TxtIterReader:
@@ -89,7 +91,12 @@ class TxtIterReader:
             'Diease': diease,
             'Race': race
         }
-        print(newPhenoData)
+        # 保存新的头文件
+        with open('newPhoneData.csv', 'w', newline='', encoding='utf-8') as f:
+            csv_writer = csv.DictWriter(f, fieldnames=list(newPhenoData[0].keys()))
+            csv_writer.writeheader()
+            csv_writer.writerows(newPhenoData)
+        f.close()
         return newPhenoData
 
     def splitExpressionMatrix(self, file, row, col):
