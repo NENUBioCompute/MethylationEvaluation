@@ -100,11 +100,55 @@ class TxtIterReader:
         :param col: tuple 需要切割的列范围
         :return: dataframe 切割后的表达矩阵
         """
-        for lines in self.iterRead(file, 10):
-            for line in lines:
-                pass
-        return 0
-
+        # _, expressionMatrix = self.splitFile(file)
+        rowList = list(row)  # 切割的行范围
+        rowLeft = rowList[0]  # 切割的列范围
+        rowRight = rowList[1]  #
+        colList = list(col)  # 切割的列范围
+        data = []  # 存放切割后的数据
+        ID_REF = []  # 表达矩阵GSM_ID序列
+        cpg = []  # 表达矩阵cpgs序列
+        for lines in self.iterRead(file):
+            for i, line in enumerate(lines):
+                print(rowRight)
+                if 'ID_REF' in line.replace('"', '').split('\t'):
+                    ID_REF.append(line.replace('"', '').split('\t')[colList[0]:colList[1] + 1])
+                if rowLeft <= i <= rowRight:
+                    cpg.append(line.replace('"', '').split('\t')[0])
+                    data.append(line.replace('"', '').split('\t')[colList[0]:colList[1] + 1])
+            if rowRight > len(lines):
+                rowLeft = 0
+                rowRight -= len(lines)
+            else:
+                break
+        newExpressionMatrix = pd.DataFrame(data, index=cpg, columns=ID_REF[0])
+        # 甲基化数据处理
+        if 'ID_REF' in newExpressionMatrix.index.values:
+            newExpressionMatrix.drop(index='ID_REF', inplace=True)
+        if 'ID_REF' in newExpressionMatrix.columns.values:
+            newExpressionMatrix.drop(columns='ID_REF', inplace=True)
+        newExpressionMatrix = newExpressionMatrix.astype(float)
+        return newExpressionMatrix
+        
+    @staticmethod
+    def fillMissingValues(data):
+        """
+        :param data: list 需要填补的数据
+        :return: list 填补缺失值后的数据
+        """
+        newData = []
+        dataSum = 0
+        for i in range(1, len(data)):
+            if data[i] != '':
+                dataSum += eval(data[i])
+        newData.append(data[0])
+        for i in range(1, len(data)):
+            if data[i] == '' or data[i] == '0':
+                newData.append(dataSum / len(data))
+            else:
+                newData.append(eval(data[i]))
+        return newData
+        
     def staticData(self, file):
         """
         统计数据
