@@ -122,7 +122,7 @@ class TxtIterReader:
                     ID_REF.append(line.replace('"', '').split('\t')[colList[0]:colList[1] + 1])
                 if rowLeft <= i <= rowRight:
                     cpg.append(line.replace('"', '').split('\t')[0])
-                    data.append(line.replace('"', '').split('\t')[colList[0]:colList[1] + 1])
+                    data.append(self.fillMissingValues(line.replace('"', '').split('\t'))[colList[0]:colList[1] + 1])
             if rowRight > len(lines):
                 rowLeft = 0
                 rowRight -= len(lines)
@@ -146,6 +146,8 @@ class TxtIterReader:
         newData = []  # 存放填补缺失值后的数据
         dataSum = 0  # 所有元素和，用于计算均值
         count = 0  # 空值个数
+        if 'ID_REF' == data[0]:
+            return data
         for i in data[1:]:
             if i != '':
                 count += 1
