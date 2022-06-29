@@ -143,15 +143,19 @@ class TxtIterReader:
         :param data: list 需要填补的数据
         :return: list 填补缺失值后的数据
         """
-        newData = []
-        dataSum = 0
+        newData = []  # 存放填补缺失值后的数据
+        dataSum = 0  # 所有元素和，用于计算均值
+        count = 0  # 空值个数
+        for i in data[1:]:
+            if i != '':
+                count += 1
         for i in range(1, len(data)):
             if data[i] != '':
                 dataSum += eval(data[i])
         newData.append(data[0])
         for i in range(1, len(data)):
-            if data[i] == '' or data[i] == '0':
-                newData.append(dataSum / len(data))
+            if data[i] == '' or eval(data[i]) <= 0:
+                newData.append(dataSum / count))
             else:
                 newData.append(eval(data[i]))
         return newData
