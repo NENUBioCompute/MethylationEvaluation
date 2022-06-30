@@ -13,7 +13,7 @@ class TxtIterReader:
         逐行读取文件
         :param file: str 文件名
         :param count: int 需要一次读取的行数
-        :return: list 返回需要行数的数据
+        :return: int 表达矩阵的行和列数
         """
         fileContext = []
         with open(file) as f:
@@ -38,6 +38,8 @@ class TxtIterReader:
         tag = False
         for lines in self.iterRead(file, 10000):
             for line in lines:
+                if '!Series_geo_accession' in line:
+                    geo_accession = line.replace('"', '').split('\t')[1]
                 if tag:
                     if '!series_matrix_table_end' in line:
                         break
@@ -46,21 +48,25 @@ class TxtIterReader:
                     if '!series_matrix_table_begin' in line:
                         tag = True
                     phenoData.append(line.strip())
+        phenoFileName = geo_accession + '_phenoData.txt'
+        expressFileName = geo_accession + '_expressionMatrix.txt'
         # 保存头文件
-        with open('phenoData.txt', 'w') as wf:
+        with open(phenoFileName, 'w') as wf:
             for item in phenoData:
                 wf.write(item)
                 wf.write('\n')
         wf.close()
         # 保存表达矩阵
-        with open('expressionMatrix.txt', 'w') as wf:
+        with open(expressFileName, 'w') as wf:
             for item in expressionMatrix:
                 wf.write(item)
                 wf.write('\n')
         wf.close()
         # 表达矩阵行数，用于切割表达矩阵
-        exprMatrixLen = len(expressionMatrix)
-        return phenoData, expressionMatrix, exprMatrixLen
+        exprMatrixRowLen = len(expressionMatrix)
+        # 表达矩阵列数，用于切割表达矩阵
+        exprMatrixColLen = len(list(expressionMatrix[0].replace('"', '').split('\t'))) - 1
+        return exprMatrixRowLen, exprMatrixColLen
 
     def processPheno(self, file):
         """
@@ -68,17 +74,21 @@ class TxtIterReader:
         :param file: str 文件名
         :return: dict/csv 新的头文件
         """
-        phenoData, _, _ = self.splitFile(file)
-        for item in phenoData:
-            if 'age' in item:
-                age = re.sub('age: ', '', item).replace('"', '').split('\t')
-            if 'sex' in item:
-                sex = re.sub('sex: ', '', item).replace('"', '').split('\t')
-            if 'sample_id' in item:
-                sample_id = item.replace('"', '').replace('!Series_sample_id\t', '').split(' ')
-            if 'source_name' in item:
-                tissues = item.replace('"', '').split('\t')
-        age = [eval(item) for item in age[1:]]
+        # phenoData, _, _ = self.splitFile(file)
+        for lines in self.iterRead(file, 10000):
+            for line in lines:
+                if '!Series_geo_accession' in line:
+                    geo_accession = line.replace('"', '').split('\t')[1]
+                if 'age: ' in line:
+                    age = re.sub('age: ', '', line).replace('"', '').split('\t')
+                if 'sex: ' in line:
+                    sex = re.sub('sex: ', '', line).replace('"', '').split('\t')
+                if 'sample_id' in line:
+                    sample_id = line.replace('"', '').replace('!Series_sample_id\t', '').split(' ')
+                if 'source_name' in line:
+                    tissues = line.replace('"', '').split('\t')
+        print(age)
+        age = [eval(i) for i in age[1:]]
         sex = sex[1:]
         tissues = tissues[1:]
         diease = ['' for i in range(len(age))]
@@ -92,12 +102,15 @@ class TxtIterReader:
                     'Sex': sex[i],
                     'Age': age[i],
                     'Tissue': tissues[i],
-                    'Diease': diease[i],
+                    'Disease': diease[i],
                     'Race': race[i]
                 }
             )
+        print(newPhenoData)
+        print(geo_accession)
+        newPhenoFileName = geo_accession + '_pheno.csv'
         # 保存新的头文件
-        with open('newPhoneData.csv', 'w', newline='', encoding='utf-8') as f:
+        with open(newPhenoFileName, 'w', newline='', encoding='utf-8') as f:
             csv_writer = csv.DictWriter(f, fieldnames=list(newPhenoData[0].keys()))
             csv_writer.writeheader()
             csv_writer.writerows(newPhenoData)
@@ -120,9 +133,11 @@ class TxtIterReader:
         data = []  # 存放切割后的数据
         ID_REF = []  # 表达矩阵GSM_ID序列
         cpg = []  # 表达矩阵cpgs序列
+        s = 0
         for lines in self.iterRead(file):
             for i, line in enumerate(lines):
-                print(line)
+                s += 1
+                print(s)
                 if 'ID_REF' in line.replace('"', '').split('\t'):
                     ID_REF = line.replace('"', '').split('\t')[colList[0]:colList[1] + 1]
                 if rowLeft <= i <= rowRight:
@@ -140,7 +155,7 @@ class TxtIterReader:
             newExpressionMatrix.drop(index='ID_REF', inplace=True)
         if 'ID_REF' in newExpressionMatrix.columns.tolist():
             newExpressionMatrix.drop(columns='ID_REF', inplace=True)
-        newExpressionMatrix.to_csv('result4.csv')
+        newExpressionMatrix.to_csv('GSE90124_beta_1.csv')
         return newExpressionMatrix
 
     @staticmethod
@@ -168,13 +183,19 @@ class TxtIterReader:
                 newData.append(eval(data[i]))
         return newData
 
-
+import datetime
 if __name__ == '__main__':
     txt = TxtIterReader()
     # 1. 拆分头文件和表达矩阵，分别存入两个文件
     # 头文件 GSEXXX_pheno.txt  表达矩阵 GSEXXX_beta.csv
-    txt.splitFile('../RawData/GSE20242_series_matrix.txt')
+    rowLen, colLen = txt.splitFile('E:/RStudioWorkspace/GSE90124/GSE90124_series_matrix.txt')
+    print(rowLen)  # 485513
+    print(colLen) ## 259
     # 2. 生成新的头文件
-
+    # txt.processPheno('./GSE78874_phenoData.txt')
     # 3. 分割表达矩阵并填补缺失值
-    txt.splitExpressionMatrix('./expressionMatrix.txt', row=(0, 27), col=(0, 25))
+    row = (0, rowLen)
+    starttime = datetime.datetime.now()
+    txt.splitExpressionMatrix('./GSE90124_expressionMatrix.txt', row=row, col=(0, 161))
+    endtime = datetime.datetime.now()
+    print(endtime - starttime)
