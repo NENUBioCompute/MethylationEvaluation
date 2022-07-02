@@ -1,4 +1,3 @@
-import re
 import csv
 import pandas as pd
 
@@ -75,35 +74,45 @@ class TxtIterReader:
         :return: dict/csv 新的头文件
         """
         # phenoData, _, _ = self.splitFile(file)
-        for lines in self.iterRead(file, 10000):
+                for lines in self.iterRead(file, 10000):
             for line in lines:
                 if '!Series_geo_accession' in line:
                     geo_accession = line.replace('"', '').split('\t')[1]
                 if 'age: ' in line:
-                    age = re.sub('age: ', '', line).replace('"', '').split('\t')
+                    age = line.replace('age: ', '').replace('"', '').split('\t')
                 if 'sex: ' in line:
-                    sex = re.sub('sex: ', '', line).replace('"', '').split('\t')
+                    sex = line.replace('sex: ', '').replace('"', '').split('\t')
                 if 'sample_id' in line:
                     sample_id = line.replace('"', '').replace('!Series_sample_id\t', '').split(' ')
                 if 'source_name' in line:
                     tissues = line.replace('"', '').split('\t')
-        print(age)
+                if '!Sample_contact_country' in line:
+                    country = line.replace('"', '').split('\t')
         age = [eval(i) for i in age[1:]]
         sex = sex[1:]
         tissues = tissues[1:]
-        diease = ['' for i in range(len(age))]
-        race = ['' for i in range(len(age))]
+        country = country[1:]
+        diease = ['AD' for i in range(len(age))]
+        race = ['Yellow' for i in range(len(age))]
 
         newPhenoData = []
         for i in range(len(age)):
             newPhenoData.append(
                 {
-                    'ID_REF': sample_id[i],
-                    'Sex': sex[i],
+                    'DataSetID':'GSE20242',
+                    'ID': sample_id[i],
                     'Age': age[i],
-                    'Tissue': tissues[i],
+                    'Age_unit': 'Year',
+                    'Gender': sex[i],
+                    'Tissue': tissues,
+                    'Platform': '27K',
+                    'Use': 'Yes',
+                    'Race': race[i],
+                    'Country': country[i],
                     'Disease': diease[i],
-                    'Race': race[i]
+                    'Condition': 'Healthy',
+                    'Tag': ''
+
                 }
             )
         print(newPhenoData)
@@ -133,11 +142,13 @@ class TxtIterReader:
         data = []  # 存放切割后的数据
         ID_REF = []  # 表达矩阵GSM_ID序列
         cpg = []  # 表达矩阵cpgs序列
-        s = 0
+        
         for lines in self.iterRead(file):
             for i, line in enumerate(lines):
-                s += 1
-                print(s)
+                # 通用
+                # if rowLeft <= i <= rowRight:
+                #     data.append(line.split())
+                # 甲基化数据
                 if 'ID_REF' in line.replace('"', '').split('\t'):
                     ID_REF = line.replace('"', '').split('\t')[colList[0]:colList[1] + 1]
                 if rowLeft <= i <= rowRight:
@@ -148,7 +159,14 @@ class TxtIterReader:
                 rowRight -= len(lines)
             else:
                 break
-        print(ID_REF)
+        # 保存切割后的数据
+        # with open('newData.txt', 'w') as wf:
+        #     for lines in data:
+        #         for line in lines:
+        #             wf.write(line)
+        #             wf.write('\t')
+        #         wf.write('\n')
+        # wf.close()
         newExpressionMatrix = pd.DataFrame(data, index=cpg, columns=ID_REF)
         # 甲基化数据处理
         if 'ID_REF' in newExpressionMatrix.index.values:
