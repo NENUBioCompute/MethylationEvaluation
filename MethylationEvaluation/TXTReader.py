@@ -19,18 +19,22 @@ class TXTReader:
         """
         count = 0
         lines = []
-        with open(file, 'r') as f:
-            for aline in f:
-                count += 1
-                lines.append(aline.strip())
-                if count >= num_read:
-                    yield lines
+        try:
+            with open(file, 'r') as f:
+                for aline in f:
+                    count += 1
+                    lines.append(aline.strip())
+                    if count >= num_read:
+                        yield lines
                     # Free buffer zone
-                    count = 0
-                    lines.clear()
+                        count = 0
+                        lines.clear()
             # yield the reset lines counted less than num_read
-            if count > 0:
-                yield lines
+                if count > 0:
+                    yield lines
+        except IOError:
+            ioError = "Sorry, the file " + file + " does not exist."
+            print(ioError)
 
     @staticmethod
     def IterReadMatrix(file: str, rows: range, cols: range, col_delimiter: str = r" ") -> iter:
