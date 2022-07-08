@@ -1,14 +1,8 @@
-# import os
-# import pandas as pd             # Comment by H.Wang: Is it necessary using pandas?
-# import numpy as np              # Comment by H.Wang: Is it necessary using numpy?
 import re
-# import csv
-
 
 class TXTReader:
     """
-    # 文件处理
-    # Comment by H.Wang: No more Chinese!!!
+    Process files in TXT format.
     """
 
     def __init__(self):
@@ -17,11 +11,11 @@ class TXTReader:
     @staticmethod
     def IterRead(file: str, num_read: int = 1, drop: str = r"", favor: str = r"") -> iter:
         """
-        :param file:
-        :param num_read:
+        :param file: str File full path
+        :param num_read:int The number of lines read each time
         :param drop: Drop the line/s including the given value
         :param favor: Keep the line/s including the given value
-        :return:
+        :return:generator
         """
         count = 0
         lines = []
@@ -31,7 +25,7 @@ class TXTReader:
                 lines.append(aline.strip())
                 if count >= num_read:
                     yield lines
-                    # 释放缓冲区
+                    # Free buffer zone
                     count = 0
                     lines.clear()
             # yield the reset lines counted less than num_read
@@ -41,21 +35,28 @@ class TXTReader:
     @staticmethod
     def IterReadMatrix(file: str, rows: range, cols: range, col_delimiter: str = r" ") -> iter:
         """
-        :param file:
-        :param rows:
-        :param cols:
-        :param col_delimiter: the delimiter/s may be used in the text file, examples: r"[ \n\t]"
-        :return:
+        :param file:str File full path
+        :param rows:The range of rows the file needs to be split on
+        :param cols:The range of columns the file needs to be split on
+        :param col_delimiter: the delimiter/s may be used in the text file, examples: r"[ \n\t;,!]"
+
         """
-        with open(file, 'r') as f:
-            for i in range(rows.start):
-                next(f)
-            for i in range(rows.start, rows.stop):
-                aline = f.readline()
-                if not aline:
-                    break
-                elements = re.split(col_delimiter, aline)
-                yield elements[cols.start:cols.stop]
+        try:
+            with open(file, 'r') as f:
+                for i in range(rows.start):
+                    next(f)
+            try:
+                for i in range(rows.start, rows.stop):
+                    aline = f.readline()
+                    if not aline:
+                        break
+                    elements = re.split(col_delimiter, aline)
+                    yield elements[cols.start:cols.stop]
+            except IndexError:
+                print("Please input the correct range!")
+        except IOError:
+            ioError = "Sorry, the file " + file + " does not exist."
+            print(ioError)
 
     # def split_row(self, line_count):
     #     for i in range(int(len(self.context) / line_count)):
@@ -115,7 +116,7 @@ if __name__ == "__main__":
     # result = test.IterRead("TXT_test.txt", 3)
     # for line in result:
     #     print(line)
-
+    #
     # Example for IterReadMatrix
     # test = TXTReader()
     # result = test.IterReadMatrix("TXT_test.txt", range(0, 3), range(0, 2), r"[ \n]")
