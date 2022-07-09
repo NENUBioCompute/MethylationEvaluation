@@ -37,7 +37,25 @@ class MethylationDataProcess:
         :param output_path: A fold to output the result files
         :return: True-succeed, False-failed
         """
-        return False
+        dataset_cpgs = []  # cpgs in dataset
+        for line in TXTReader.IterReadMatrix(file, (0, 485577), (0,1), '\t'):
+            dataset_cpgs.append(line[0].strip('"'))
+        miss_cpgs = []  # cpgs missing in the papers
+        with open('./NO_cpgs_dict_14num.json') as f:
+            cpgs_num = json.load(f)
+            for item in cpgs_num:
+                # difference set of CpG between papers and dataset
+                miss_cpgs_list = list(set(cpgs_num[item]).difference(set(dataset_cpgs)))
+
+                miss_cpgs_dict = {
+                            'paper_id': 'N0.' + str(item),  # paper id
+                            'miss_cpgs': miss_cpgs_list,  # missing cpgs
+                            'miss_nums': len(miss_cpgs_list),  # number of missing cpgs
+                            'miss_ratio': '{:.2%}'.format(len(miss_cpgs_list) / len(cpgs_num[item]))  # ratio of missing cpgs
+                        }
+
+                miss_cpgs.append(miss_cpgs_dict)
+        f.close()
 
     def FillMissingValues(self, file: str, missing_values, filling_values, outfile: str):
         """
