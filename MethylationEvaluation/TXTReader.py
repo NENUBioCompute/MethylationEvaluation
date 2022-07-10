@@ -42,7 +42,7 @@ class TXTReader:
 
         """
         with open(file, 'r') as f:
-            # if rows is out of range
+            # If rows is out of range
             file_len = TXTReader.FileLen(file)
             if rows.start < rows.stop <= file_len:
                 for i in range(rows.start):
@@ -53,11 +53,11 @@ class TXTReader:
                         break
                     elements = re.split(col_delimiter, aline)
                     col_len = len(elements)
-                    #if cols is out of range
+                    #If cols is out of range
                     if cols.start < cols.stop <=col_len:
                         yield elements[cols.start:cols.stop]
                         col_len_temp = len(elements[cols.start:cols.stop])
-                        # if it is a matrix
+                        # If it is a matrix
                         if col_len != col_len_temp:
                             raise Exception("Not a Matrix!")
                     else:
