@@ -68,10 +68,9 @@ class TXTReader:
     @staticmethod
     def FileLen(file:str):
         File = TXTReader.IterRead(file, 1)
-        content = []
+        File_len = 0
         for aline in File:
-            content.append(aline)
-        File_len =len(content)
+            File_len +=1
         return File_len
 
 
@@ -88,9 +87,11 @@ if __name__ == "__main__":
     # for line in result:
     #     print(line)
     #
-    # file_len = TXTReader.FileLen("E:/net download/GSE62867_series_matrix.txt")
-    # print(file_len)
-    file = TXTReader.IterReadMatrix("E:/net download/GSE62867_series_matrix.txt", range(46, 65), range(0, 5), r"[ \n\t]")
-    for line in file:
-        print(line)
+    file_len = TXTReader.FileLen("E:/net download/GSE62867_series_matrix.txt")
+    print(file_len)
+    # file = TXTReader.IterReadMatrix("E:/net download/GSE62867_series_matrix.txt", range(46, 65), range(0, 5), r"[ \n\t]")
+    # for line in file:
+    #     print(line)
+
+
 
