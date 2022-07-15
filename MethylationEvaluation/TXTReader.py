@@ -42,28 +42,18 @@ class TXTReader:
 
         """
         with open(file, 'r') as f:
-            # If rows is out of range
-            file_len = TXTReader.FileLen(file)
-            if rows.start < rows.stop <= file_len:
-                for i in range(rows.start):
-                    next(f)
-                for i in range(rows.start, rows.stop):
-                    aline = f.readline()
-                    if not aline:
-                        break
-                    elements = re.split(col_delimiter, aline)
-                    col_len = len(elements)
-                    #If cols is out of range
-                    if cols.start < cols.stop <=col_len:
-                        yield elements[cols.start:cols.stop]
-                        col_len_temp = len(elements[cols.start:cols.stop])
-                        # If it is a matrix
-                        if col_len != col_len_temp:
-                            raise Exception("Not a Matrix!")
-                    else:
-                        raise Exception("Please input the correct columns range!")
-            else:
-                raise Exception("Please input the correct row range!")
+            for i in range(rows.start):
+                next(f)
+            for i in range(rows.start, rows.stop):
+                aline = f.readline()
+                if not aline:
+                    break
+                elements = re.split(col_delimiter, aline)
+                col_len = len(elements)
+                if cols.stop < col_len:
+                    yield elements[cols.start:cols.stop]
+                else:
+                    yield elements[cols.start:col_len-1]
 
     @staticmethod
     def FileLen(file:str):
@@ -87,11 +77,11 @@ if __name__ == "__main__":
     # for line in result:
     #     print(line)
     #
-    file_len = TXTReader.FileLen("E:/net download/GSE62867_series_matrix.txt")
-    print(file_len)
-    # file = TXTReader.IterReadMatrix("E:/net download/GSE62867_series_matrix.txt", range(46, 65), range(0, 5), r"[ \n\t]")
-    # for line in file:
-    #     print(line)
+    # file_len = TXTReader.FileLen("E:/net download/GSE62867_series_matrix.txt")
+    # print(file_len)
+    file = TXTReader.IterReadMatrix("E:/net download/GSE62867_series_matrix.txt", range(27650, 30000), range(0, 24), r"[ \n\t]")
+    for line in file:
+        print(line)
 
 
 
