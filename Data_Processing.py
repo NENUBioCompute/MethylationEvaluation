@@ -46,7 +46,7 @@ class LoadData():
         return x_train, x_test, y_train, y_test
 
     def calculate_mul(self, matrix):
-        return torch.tensor([torch.mul(x, x.T) for x in matrix])
+        return torch.tensor([np.array(torch.mul(x, x.T)) for x in matrix])
 
     def calculate_stat(self):
         matrix, label = self.load_origin_data()
