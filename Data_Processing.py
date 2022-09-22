@@ -45,12 +45,19 @@ class LoadData():
             y_test = torch.tensor(np.array(y_test).astype('float64'))
         return x_train, x_test, y_train, y_test
 
-    def calculate_mul(self, matrix):
-        return torch.tensor([np.array(torch.mul(x, x.T)) for x in matrix])
-
     def calculate_stat(self):
         matrix, label = self.load_origin_data()
         print(matrix.shape, label.shape)
+        
+    def calculate_mul(self, matrix):
+        return torch.tensor([np.array(torch.mul(x, x.T)) for x in matrix])
+
+    def calculate_complement(self, matrix):
+        square_root = math.ceil(pow(matrix.shape[2], 1/2))
+        comp_num = pow(square_root, 2) - matrix.shape[2]
+        zeros_ = torch.zeros([matrix.shape[0], 1, comp_num], dtype=torch.float64)
+        X = torch.cat((matrix, zeros_), 2).reshape(matrix.shape[0], 1, square_root, square_root)
+        return X
 
     def load_datasets(self):
         matrix, label = self.load_origin_data()
@@ -63,12 +70,18 @@ class LoadData():
         data_loader = self.get_DataLoader(X, y, batch_size=32, shuffle=True)
         return data_loader
 
-    def get_image_data(self, X, y):
+    def get_image_data_in_Matrix_mul(self, X, y):
         X = X.unsqueeze(2)
         X = self.calculate_mul(X)
         data_loader = self.get_DataLoader(X, y, batch_size=32, shuffle=True)
         return data_loader
-
+    
+    def get_image_data_in_reshape(self, X, y):
+        X = X.unsqueeze(1)
+        X = self.calculate_complement(X)
+        data_loader = self.get_DataLoader(X, y, batch_size=32, shuffle=True)
+        return data_loader
+    
     def get_DataLoader(self, X, y, batch_size=32, shuffle=True):
         Dataset = Data.TensorDataset(X, y)
         Loader = Data.DataLoader(dataset=Dataset, batch_size=batch_size, shuffle=shuffle)
@@ -82,8 +95,8 @@ if __name__ == '__main__':
     x_train, x_test, y_train, y_test = data.load_datasets()
 
     # if you load data as images-input
-    train_DataLoader = data.get_image_data(x_train, y_train)  # train
-    test_DataLoader = data.get_image_data(x_test, y_test)  # test
+    train_DataLoader = data.get_image_data_in_reshape(x_train, y_train)  # train
+    test_DataLoader = data.get_image_data_in_reshape(x_test, y_test)  # test
 
     # if you load data as sequences-input
     # train_DataLoader = data.get_sequence_data(x_train, y_train)  # train
