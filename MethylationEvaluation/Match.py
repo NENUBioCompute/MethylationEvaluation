@@ -20,7 +20,7 @@ class Match:
         for name in list(betaData.columns.values):
             if name not in sampleList:
                 betaData.drop([name], axis=1)
-        self.matchSampleSeq(betaData)
+        return betaData
 
     def matchSampleSeq(self, betaData, metaData):
         """
