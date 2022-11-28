@@ -8,8 +8,22 @@ class Stat:
     def MissingValue(self, file):
         data = pd.DataFrame(file)
         num = data.isnull().sum()
-        pos = [[], [], []]
-        return num, pos
+
+        miss = {
+            'missValue': {
+                'num': num,
+                'position': [[1, 2], [3, 4], [3, 5]]
+            },
+            'missElements': {
+                'num': 1000,
+                'position': [[], [], []]
+            },
+            'errValue': {
+                'num': 1000,
+                'position': [[], [], []]
+            }
+        }
+        return miss
 
 
     def MissingElements(self, file):
