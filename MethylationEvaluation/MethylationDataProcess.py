@@ -82,6 +82,7 @@ class MethylationDataProcess:
         :return: True-succeed, False-failed
         """
         fill = FillNAValue()
+
         if filling_fun == 'R':
             data = fill.fill(file)
         elif filling_fun == 'fixed':
@@ -98,14 +99,14 @@ class MethylationDataProcess:
         :param file: The original file with missing elements
         :param normalize_fun: normalize methods
         :param outfile: Full path of the result file to be created
-        :return: True-succeed, False-failed
+        :return: data
         """
         nor = Normalize()
         if normalize_fun == 'R':
             data = nor.methylationFormula(file)
         else:
             data = nor.other()
-        return False
+        return data
 
     def MatchFileElements(self, file: str, meta_file: str, pheno_file: str, outfile: str):
         """
@@ -114,8 +115,18 @@ class MethylationDataProcess:
         :param meta_file: Full path of the result file to be created
         :param pheno_file: The original file
         :param outfile: Full path of the result file to be created
-        :return: True-succeed, False-failed
+        :return: data
         """
         match = Match()
         data = match.deleteSampleName(file, meta_file)
-        return False
+        return data
+
+    def getPhenoData(self):
+        pass
+
+
+if __name__ == '__main__':
+    meth = MethylationDataProcess()
+    data_nor = meth.NormalizeFile()
+    data_fill = meth.FillMissingValues()
+    data_mat = meth.MatchFileElements()
