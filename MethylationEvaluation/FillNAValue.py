@@ -17,7 +17,6 @@ class FillNAValue:
         elif rule == 'column':
             for index, col in betaData.iteritems():
                 col.fillna(col.mean(), inplace=True)
-        print(betaData)
         return betaData
 
     def fixed(self, betaData, fixedValue=0.5):
