@@ -1,9 +1,18 @@
+import rpy2.robjects as robjects
+from rpy2.robjects.packages import importr
+
 class FillNAValue:
     def __init__(self):
         pass
 
     def fill(self, betaData):
-        pass
+        methyLImp = importr('methyLImp')
+        robjects.r.source('methyLImp.R')
+        matrix = robjects.IntVector(betaData)
+        mat_Int = robjects.r['matrix'](matrix, nrow = 2)
+        res_MatInt = robjects.r.methyLImp(mat_Int)
+        print(type(res_MatInt))
+        print(res_MatInt)
 
     def average(self, betaData, rule='row'):
         """
@@ -34,3 +43,7 @@ class FillNAValue:
         :return: data that filled
         """
         pass
+
+if __name__ == '__main__':
+    Fill = FillNAValue()
+    Fill.fill([[1,2,3], [4,5,6]])
