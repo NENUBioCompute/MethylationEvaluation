@@ -32,48 +32,55 @@ source('/home/zongxizeng/methyTest/R/27/VidalBraloAge.R')
 
 
 ClocksTest <- function (GEOID) {
-  # 读取头文件
-  ph_name = paste('/home/data/Standardized/mapped_lv3/', GEOID, sep = "", collapse = NULL)
-  ph_name = paste(ph_name, '_pheno.csv', sep = "", collapse = NULL)
-  ph = fread(ph_name)
+  # get pheno data
+  ph_name <- paste('/home/data/Standardized/mapped_lv3/', GEOID, sep = "", collapse = NULL)
+  ph_name <- paste(ph_name, '_pheno.csv', sep = "", collapse = NULL)
+  ph <- fread(ph_name)
   ph <- data.frame(ph)
+  ph[is.na(ph)] <- ""
 
-  # 读取表达矩阵csv
-  name = paste('/home/data/Standardized/express/', GEOID, sep = "", collapse = NULL)
+  # get expression matrix data
+  name <- paste('/home/data/Standardized/express/', GEOID, sep = "", collapse = NULL)
   name <- paste(name, '_beta.csv', sep = "", collapse = NULL)
   dat0 <- fread(name)
   dat0 <- data.frame(dat0)
-  rownames(dat0) = dat0$V1
+  rownames(dat0) <- dat0$V1
   dat0 <- dat0[,-1]
 
   print(colnames(dat0) == ph$ID)
 
-  print('================NO.14=====================')
-  MEATAge = MEAT(dat0, ph) # NO.14
-  print('================NO.01=====================')
-  HorvathAge = Horvath(dat0) # NO.1
-  print('================NO.02=====================')
-  SkinBloodAge = SkinBloodAge(dat0) # NO.2
-  print('================NO.03=====================')
-  ZhangAge = ZhangAge(dat0, ph) # NO.3
-  print('================NO.04=====================')
-  HannumAge = Hannum(dat0) # NO.4
-  print('================NO.05=====================')
-  WeidnerAge = WeidnerAge(dat0) # NO.5
-  print('================NO.06=====================')
-  LinAge = LinAge(dat0) # NO.6
-  print('================NO.08=====================')
-  PedBEAge = PedBE(dat0) # NO.8
-  print('================NO.17=====================')
-  LevineAge = Levine(dat0) # NO.17
-  print('================NO.19=====================')
-  BNNAge = BNNAge(dat0, ph) # NO.19
-  print('================NO.24=====================')
-  CorticalClockAge = CorticalClock(dat0, ph) # NO.24
-  print('================NO.27=====================')
-  VidalBraloAge = VidalBraloAge(dat0) # NO.27
+  len <- length(ph$Age) # age count
 
-  df = data.frame(
+  # If the method cannot predict the age, the predicted age values are null.
+  noPredAge <- rep(c(''), len)
+
+
+  print('================NO.14=====================')
+  MEATAge <- tryCatch({ MEAT(dat0, ph) }, warning = function(w){ noPredAge }, error = function(e){ noPredAge },finally = {}) # NO.14
+  print('================NO.01=====================')
+  HorvathAge <- tryCatch({ Horvath(dat0) }, warning = function(w){ noPredAge }, error = function(e){ noPredAge },finally = {}) # NO.1
+  print('================NO.02=====================')
+  SkinBloodAge <- tryCatch({ SkinBloodAge(dat0) }, warning = function(w){ noPredAge }, error = function(e){ noPredAge },finally = {}) # NO.2
+  print('================NO.03=====================')
+  ZhangAge <- tryCatch({ ZhangAge(dat0, ph) }, warning = function(w){ noPredAge }, error = function(e){ noPredAge },finally = {}) # NO.3
+  print('================NO.04=====================')
+  HannumAge <- tryCatch({ Hannum(dat0) }, warning = function(w){ noPredAge }, error = function(e){ noPredAge },finally = {}) # NO.4
+  print('================NO.05=====================')
+  WeidnerAge <- tryCatch({ WeidnerAge(dat0) }, warning = function(w){ noPredAge }, error = function(e){ noPredAge },finally = {}) # NO.5
+  print('================NO.06=====================')
+  LinAge <- tryCatch({ LinAge(dat0) }, warning = function(w){ noPredAge }, warning = function(w){ noPredAge }, error = function(e){ noPredAge },finally = {}) # NO.6
+  print('================NO.08=====================')
+  PedBEAge <- tryCatch({ PedBE(dat0) }, warning = function(w){ noPredAge }, error = function(e){ noPredAge },finally = {}) # NO.8
+  print('================NO.17=====================')
+  LevineAge <- tryCatch({ Levine(dat0) }, warning = function(w){ noPredAge }, error = function(e){ noPredAge },finally = {}) # NO.17
+  print('================NO.19=====================')
+  BNNAge <- tryCatch({ BNNAge(dat0, ph) }, warning = function(w){ noPredAge }, error = function(e){ noPredAge },finally = {}) # NO.19
+  print('================NO.24=====================')
+  CorticalClockAge <- tryCatch({ CorticalClock(dat0, ph) }, warning = function(w){ noPredAge }, error = function(e){ noPredAge },finally = {}) # NO.24
+  print('================NO.27=====================')
+  VidalBraloAge <- tryCatch({ VidalBraloAge(dat0) }, warning = function(w){ noPredAge }, error = function(e){ noPredAge },finally = {}) # NO.27
+
+  df <- data.frame(
     ID = ph$ID,
     Age = as.numeric(ph$Age),
     Age_unit = ph$Age_unit,
