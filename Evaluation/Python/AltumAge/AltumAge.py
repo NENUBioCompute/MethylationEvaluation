@@ -25,7 +25,7 @@ class AltumAge:
         :param data: feature matrix
         :return: predicted results
         """
-        methylation_scaled = self.scaler.transform(methylation_data[self.cpgs])
+        methylation_scaled = self.scaler.transform(methylation_data[self.cpgs].values)
         pred_age = self.model.predict(methylation_scaled).flatten()
         return pred_age
 
@@ -44,5 +44,7 @@ if __name__ =='__main__':
 
     AA = AltumAge('AltumAge.h5', 'scaler.pkl', 'multi_platform_cpgs.pkl')
     pred = AA.predict(methylation)
+
+    print(pred)
     end = time.time()
     consume_time = (end - start) / 60
