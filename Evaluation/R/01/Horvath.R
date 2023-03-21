@@ -1,21 +1,26 @@
-#### NO.01 Horvath Clocks ####
+#### NO.01_fill Horvath Clocks ####
 
-Horvath <- function (dat0) {
+Horvath <- function(betaPath) {
+  # get expression matrix data
+  dat0 <- fread(betaPath)
+  dat0 <- data.frame(dat0)
+  rownames(dat0) <- dat0$V1
+  dat0 <- dat0[,-1]
+
   source("/home/zongxizeng/methyTest/R/01/NORMALIZATION.R")
-  trafo= function(x,adult.age=20) { x=(x+1)/(1+adult.age); y=ifelse(x<=1, log( x),x-1);y }
+  trafo= function(x,adult.age=20) { x<-(x+1)/(1+adult.age); y<-ifelse(x<=1, log( x),x-1);y }
   anti.trafo= function(x,adult.age=20) { ifelse(x<0, (1+adult.age)*exp(x)-1, (1+adult.age)*x+adult.age) }
   probeAnnotation21kdatMethUsed=read.csv("/home/zongxizeng/methyTest/R/01/probeAnnotation21kdatMethUsed.csv")
   probeAnnotation27k=read.csv("/home/zongxizeng/methyTest/R/01/datMiniAnnotation27k.csv")
   datClock=read.csv("/home/zongxizeng/methyTest/R/01/AdditionalFile3.csv")
 
-  # #获取甲基化数据
   dat0 <- data.frame(rownames(dat0), dat0)
   names(dat0)[names(dat0) == 'rownames.dat0.'] <- 'ProbeID'
 
   nSamples=dim(dat0)[[2]]-1
   nProbes= dim(dat0)[[1]]
   dat0[,1]= gsub(x=dat0 [,1],pattern="\"",replacement="")
-  # 创建日志文件
+  # create log data
   file.remove("/home/zongxizeng/methyTest/R/01/LogFile.txt")
   file.create("/home/zongxizeng/methyTest/R/01/LogFile.txt")
   DoNotProceed=FALSE
@@ -73,34 +78,26 @@ Horvath <- function (dat0) {
   meanXchromosome= as.numeric(apply( as.matrix(dat0[selectXchromosome,-1]),2,mean,na.rm=TRUE)) }
   if (  sum(is.na(meanXchromosome)) >0 ) { cat(paste( "\n \n Comment: There are lots of missing values for X chromosomal probes for some of the samples. This is not a problem when it comes to estimating age but I cannot predict the gender of these samples.\n " ),file="LogFile.txt",append=TRUE)  }
 
-  #若缺少整个cpg位点(补0.5值)--起
-  #取出缺少的cpg位点
+  # fill missing cpg row 0.5
   dispos <- setdiff(probeAnnotation21kdatMethUsed$Name,dat0$ProbeID)
-  #建立缺少的cpg矩阵
   dis <- matrix(data=0.5, nrow = length(dispos), ncol = length(colnames(dat0)), byrow = FALSE, dimnames = list(dispos,colnames(dat0)))
   dis <- data.frame(dis)
   dis$ProbeID <- rownames(dis)
-  #dis <- dis[-1,]
-  #合并两个（按行）
   dat0 <- rbind(dat0,dis)
-  #若缺少整个cpg位点--终
 
-  # 2：将数据限制为21k探针，并确保它们是数字
+  # 2：Limit the data to 21k probes and make sure they are digital
   match1=match(probeAnnotation21kdatMethUsed$Name , dat0[,1])
   if(sum( is.na(match1))>0 ) stop(paste(sum( is.na(match1)), "CpG probes cannot be matched"))
   match2=na.omit(match1)
 
 
   dat1= dat0[match2,]
-  print(colnames(dat1))
   asnumeric1=function(x) {as.numeric(as.character(x))}
   dat1[,-1]=apply(as.matrix(dat1[,-1]),2,asnumeric1)
-  #取消科学计数法
-  #options(scipen=500)
-  # 3：创建名为datout的输出文件
+  # 3：Create an output file named datout
   set.seed(1)
 
-  # 是否要规范化数据（推荐）
+  # To normalize data or not (recommended)
   normalizeData=F
 
   fastImputation=FALSE
@@ -225,7 +222,7 @@ Horvath <- function (dat0) {
   } # end of if
 
    } # end of if
-  # 4: 输出结果
+  # 4: result
   if (  sum(  datout$Comment  != "" )   ==0 ) { cat(paste( "\n The individual samples appear to be fine. "),file="LogFile.txt",append=TRUE)  }
   if (  sum(  datout$Comment != "" )   >0 ) { cat(paste( "\n Warnings were generated for the following samples.\n", datout[,1][datout$Comment != ""], "\n Hint: Check the output file for more details."),file="LogFile.txt",append=TRUE)  }
 

@@ -1,5 +1,5 @@
 
-from MethylationEvaluation.Evaluation.Python.FeSTwo.Lib_FeatureEngineering import NewFeatures
+from MethylationEvaluation.Utilities.Algorithms.FeSTwo.Lib_FeatureEngineering import NewFeatures
 from MethylationEvaluation.Utilities.FileDealers.PickleDealer import PickleDealer
 import re
 import time
@@ -20,7 +20,7 @@ class FeSTwo:
         :param data: feature matrix
         :return: predicted results
         """
-        return self.model.predict(methylation_data.values)
+        return self.model.predict(methylation_data)
 
     def fetch_feature_name(self):
         pattern = re.compile('"(.+?)"')
@@ -49,7 +49,7 @@ class FeSTwo:
         methylation = pd.DataFrame(np.full((len(data), len(self.raw)), 0.5), columns=self.raw, index=data.index)
         common = set(self.raw).intersection(set(list(data)))
         methylation[list(common)] = data[list(common)].astype('float32')
-        dfRaw = pd.DataFrame(methylation[list(self.raw)], dtype=np.float64)
+        dfRaw = pd.DataFrame(methylation[self.raw], dtype=np.float64)
         return dfRaw
 
     def get_sqare_raw_vertor(self, data):
@@ -82,6 +82,7 @@ if __name__ == '__main__':
 
     # get predicted ages
     pred_age = FE.predict(fea_vector)
+    print(pred_age)
 
     end = time.time()
     consume_time = (end - start) / 60

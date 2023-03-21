@@ -1,9 +1,23 @@
-CorticalClock<-function(betas, pheno){
+# CorticalClock<-function(betas, pheno){
+CorticalClock <- function(betaPath) {
+
+  # get expression matrix data
+  dat0 <- fread(betaPath)
+  dat0 <- data.frame(dat0)
+  rownames(dat0) <- dat0$V1
+  dat0 <- dat0[,-1]
 
   # read in cortical clock coeffs
   braincoef<-read.table("/home/zongxizeng/methyTest/R/24/CorticalClockCoefs.txt", stringsAsFactor=F,header=T)
   braincoef$probe<-as.character(braincoef$probe)
 
+  # fill missing cpg row 0.5
+  dispos <- setdiff(braincoef$probe, rownames(dat0))
+  dis <- matrix(data=0.5, nrow = length(dispos), ncol = length(colnames(dat0)), byrow = FALSE, dimnames = list(dispos,colnames(dat0)))
+  dis <- data.frame(dis)
+  dat0 <- rbind(dat0,dis)
+
+  betas <- dat0
   # find the overlap between the probes and your data
   overlap<-braincoef[which(braincoef$probe %in% rownames(betas)),]
   if (nrow(overlap) < nrow(braincoef) ){
@@ -75,8 +89,8 @@ CorticalClock<-function(betas, pheno){
     #################################################
     #############  Save brain predictions ###########
     #################################################
-    pheno<-pheno[match(colnames(betas), pheno$ID),]
-    pheno$brainpred<-as.numeric(brainpred)
+    # pheno<-pheno[match(colnames(betas), pheno$ID),]
+    brainpred<-as.numeric(brainpred)
 
     ## if not impuation for missing values:
 
@@ -98,11 +112,12 @@ CorticalClock<-function(betas, pheno){
     anti.trafo<-function(x,adult.age=20) { ifelse(x<0, (1+adult.age)*exp(x)-1, (1+adult.age)*x+adult.age) }
     brainpred<-anti.trafo(brainpred)
 
+    brainpred<-as.numeric(brainpred)
     # Save brain predictions
-    pheno<-pheno[match(colnames(betas), pheno$ID),]
-    pheno$brainpred<-as.numeric(brainpred)
-    pheno$Age<-as.numeric(pheno$Age)
+    # pheno<-pheno[match(colnames(betas), pheno$ID),]
+    # pheno$brainpred<-as.numeric(brainpred)
+    # pheno$Age<-as.numeric(pheno$Age)
 
   }
-  return(pheno$brainpred)
+  return(brainpred)
 }

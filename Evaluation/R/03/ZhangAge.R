@@ -4,12 +4,21 @@
 # Created on: 2023/1/12
 
 #### NO.03 Zhang Clocks ####
-ZhangAge <- function (dat0, ph) {
+#ZhangAge <- function (dat0, ph) {
+ZhangAge <- function (betaPath) {
+  dat0 <- fread(betaPath)
+  dat0 <- data.frame(dat0)
+  rownames(dat0) <- dat0$V1
+  dat0 <- dat0[,-1]
+
+  read.table("/home/zongxizeng/methyTest/R/03/blup.coef",stringsAsFactor=F,header=T)->blupcoef
+  # fill missing cpg row 0.5
+  dispos <- setdiff(blupcoef[,1][-1], rownames(dat0))
+  dis <- matrix(data=0.5, nrow = length(dispos), ncol = length(colnames(dat0)), byrow = FALSE, dimnames = list(dispos,colnames(dat0)))
+  dis <- data.frame(dis)
+  dat0 <- rbind(dat0,dis)
+
   dat0 <- t(dat0)
-  df = data.frame(
-    ID= rownames(dat0),
-    age = as.numeric(ph$Age)
-  )
 
   ############# for each probe, change to missing value to the mean value across all individuals #############
   addna<-function(methy){
@@ -26,7 +35,7 @@ ZhangAge <- function (dat0, ph) {
   print("1. Data loading and QC")
 
   print("1.1 Reading the data")
-  dat0-> data        ########## IND * Probe, each row represents one individual, it should be "RAW BETA" DNA methylation value
+  dat0 -> data        ########## IND * Probe, each row represents one individual, it should be "RAW BETA" DNA methylation value
 
   if(nrow(data) > ncol(data)){
     print("I guess you are using Probe in the row, data will be transformed!!!")
@@ -84,15 +93,8 @@ ZhangAge <- function (dat0, ph) {
 
 
   ############# 6. Save the predicted result ###########
+  blupred<-blupred[,rownames(dat0)]
 
-  age.raw <- df
-
-  enpred<-enpred[,age.raw$ID]
-  blupred<-blupred[,age.raw$ID]
-  age.raw$enpred<-as.double(enpred)
-  age.raw$blupred<-as.double(blupred)
-
-  return(age.raw$blupred)
-
+  return(as.double(blupred))
 }
 
