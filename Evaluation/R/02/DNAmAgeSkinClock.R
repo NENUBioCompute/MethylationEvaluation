@@ -18,7 +18,7 @@ SkinBloodAge <- function(betaPath) {
   trafo= function(x,adult.age=adult.age1){x=(x+1)/(1+adult.age); y=ifelse(x<=1,log( x),x-1);y}
   anti.trafo= function(x,adult.age=adult.age1) {ifelse(x<0, (1+adult.age)*exp(x)-1,(1+adult.age)*x+adult.age) }
 
-  datClock=read.csv("/home/zongxizeng/methyTest/R/02/datSkinClock.csv")
+  datClock=read.csv("/home/zongxizeng/MethylationEvaluation/Evaluation/R/02/datSkinClock.csv")
 
   # fill missing cpg row 0.5
   dispos <- setdiff(datClock[-1,1], dat0$ProbeID)

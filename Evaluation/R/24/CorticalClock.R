@@ -8,7 +8,7 @@ CorticalClock <- function(betaPath) {
   dat0 <- dat0[,-1]
 
   # read in cortical clock coeffs
-  braincoef<-read.table("/home/zongxizeng/methyTest/R/24/CorticalClockCoefs.txt", stringsAsFactor=F,header=T)
+  braincoef<-read.table("/home/zongxizeng/MethylationEvaluation/Evaluation/R/24/CorticalClockCoefs.txt", stringsAsFactor=F,header=T)
   braincoef$probe<-as.character(braincoef$probe)
 
   # fill missing cpg row 0.5
@@ -39,7 +39,7 @@ CorticalClock <- function(betaPath) {
     betas<-t(betas)
 
     # read in ref data and match
-    load("/home/zongxizeng/methyTest/R/24/Ref_DNAm_brain_values.rdat")
+    load("/home/zongxizeng/MethylationEvaluation/Evaluation/R/24/Ref_DNAm_brain_values.rdat")
     ref<-ref[which(names(ref) %in% braincoef$probe) , drop=F]
 
 

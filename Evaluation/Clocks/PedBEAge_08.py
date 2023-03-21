@@ -7,7 +7,7 @@ import time
 import json
 
 table = importr('data.table')
-robjects.r.source('/home/zongxizeng/methyTest/R/08/PedBE.R')
+robjects.r.source('/home/zongxizeng/MethylationEvaluation/Evaluation/R/08/PedBE.R')
 
 
 def PedBEAge(GEOID):
@@ -47,7 +47,7 @@ def PedBEAge(GEOID):
         "Platform": pheno_data['Platform'].tolist()[0]
     }
     print(ageData)
-    file = '/home/zongxizeng/methyTest/ResultNew/08/' + FileName
+    file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/08/' + FileName
     # with open(file, 'w') as f:
     #     json.dump(ageData, f)
     # f.close()
@@ -75,7 +75,7 @@ PedBEAge('GSE67444')
 #            'GSE179325', 'GSE198904_1', 'GSE198904_2']
 #     errorGeo= []
 #     for i in geo:
-#         res_file = '/home/zongxizeng/methyTest/result/08_fill/' + i + '_predicted_by_NO.08.json'
+#         res_file = '/home/zongxizeng/MethylationEvaluation/Evaluation/result/08_fill/' + i + '_predicted_by_NO.08.json'
 #         if os.path.exists(res_file):
 #             print('This result file already exists')
 #             continue

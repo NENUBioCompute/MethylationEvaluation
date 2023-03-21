@@ -7,7 +7,7 @@ import time
 import json
 
 table = importr('data.table')
-robjects.r.source('/home/zongxizeng/methyTest/R/27/VidalBraloAge.R')
+robjects.r.source('/home/zongxizeng/MethylationEvaluation/Evaluation/R/27/VidalBraloAge.R')
 
 
 def VidalBraloAge(GEOID):
@@ -47,7 +47,7 @@ def VidalBraloAge(GEOID):
         "Platform": pheno_data['Platform'].tolist()[0]
     }
     print(ageData)
-    # file = '/home/zongxizeng/methyTest/ResultNew/27/' + FileName
+    # file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/27/' + FileName
     # with open(file, 'w') as f:
     #     json.dump(ageData, f)
     # f.close()
@@ -58,7 +58,7 @@ VidalBraloAge('GSE20242')
 #     geo = ['GSE67444', 'GSE42700', 'GSE77445']
 #     # max = ['GSE55763', 'GSE152026','GSE42861', 'GSE43414','GSE137904',]
 #     for i in geo:
-#         res_file = '/home/zongxizeng/methyTest/ResultNew/27/' + i + '_predicted_by_NO.27.json'
+#         res_file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/27/' + i + '_predicted_by_NO.27.json'
 #         if os.path.exists(res_file):
 #             print('This result file already exists')
 #             continue

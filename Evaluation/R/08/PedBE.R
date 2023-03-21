@@ -8,7 +8,7 @@ PedBE <- function(betaPath) {
   dat0 <- data.frame(rownames(dat0), dat0)
   names(dat0)[names(dat0) == 'rownames.dat0.'] <- 'ProbeID'
 
-  datClock=read.csv("/home/zongxizeng/methyTest/R/datcoefInteresting94.csv")
+  datClock=read.csv("/home/zongxizeng/MethylationEvaluation/Evaluation/R/datcoefInteresting94.csv")
 
   # fill missing cpg row 0.5
   dispos <- setdiff(datClock[-1,1], dat0$ProbeID)

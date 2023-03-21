@@ -7,7 +7,7 @@ import time
 import json
 
 table = importr('data.table')
-robjects.r.source('/home/zongxizeng/methyTest/R/19/BNNAge.R')
+robjects.r.source('/home/zongxizeng/MethylationEvaluation/Evaluation/R/19/BNNAge.R')
 
 
 def BNNAge(GEOID):
@@ -46,7 +46,7 @@ def BNNAge(GEOID):
         "TrueAge": trueAge,
         "Platform": pheno_data['Platform'].tolist()[0]
     }
-    file = '/home/zongxizeng/methyTest/ResultNew/19/' + FileName
+    file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/19/' + FileName
     # with open(file, 'w') as f:
     #     json.dump(ageData, f)
     print(ageData)
@@ -61,7 +61,7 @@ BNNAge('GSE20242')
 #            'GSE198904_1', 'GSE198904_2', 'GSE179325', 'GSE142439','GSE152026_1','GSE152026_2','GSE152026_3','GSE152026_4','GSE152026_5',
 #            'GSE51954']
 #     for i in geo:
-#         res_file = '/home/zongxizeng/methyTest/ResultNew/19/' + i + '_predicted_by_NO.19.json'
+#         res_file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/19/' + i + '_predicted_by_NO.19.json'
 #         if os.path.exists(res_file):
 #             print('This result file already exists')
 #             continue

@@ -7,7 +7,7 @@ import time
 import json
 
 table = importr('data.table')
-robjects.r.source('/home/zongxizeng/methyTest/R/04/Hannum.R')
+robjects.r.source('/home/zongxizeng/MethylationEvaluation/Evaluation/R/04/Hannum.R')
 
 
 def HannumAge(GEOID):
@@ -47,7 +47,7 @@ def HannumAge(GEOID):
         "Platform": pheno_data['Platform'].tolist()[0]
     }
     print(ageData)
-    # file = '/home/zongxizeng/methyTest/ResultNew/04/' + FileName
+    # file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/04/' + FileName
     # with open(file, 'w') as f:
     #     json.dump(ageData, f)
     # f.close()
@@ -73,7 +73,7 @@ HannumAge('GSE67444')
 #            'GSE137904',
 #            'GSE74193', 'GSE40279', 'GSE56105', 'GSE137841', 'GSE59685', 'GSE53740', 'GSE64511', 'GSE56581']
 #     for i in ['GSE152026', ]:
-#         res_file = '/home/zongxizeng/methyTest/result/04/' + i + '_predicted_by_NO.04.json'
+#         res_file = '/home/zongxizeng/MethylationEvaluation/Evaluation/result/04/' + i + '_predicted_by_NO.04.json'
 #         if os.path.exists(res_file):
 #             print('This result file already exists')
 #             continue

@@ -44,7 +44,7 @@ def AltumAge(GEOID):
         "TrueAge": trueAge,
         "Platform": pheno_data['Platform'].tolist()[0]
     }
-    file = '/home/zongxizeng/methyTest/ResultNew/15/' + GEOID + "_predicted_by_NO.15.json"
+    file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/15/' + GEOID + "_predicted_by_NO.15.json"
     with open(file, 'w') as f:
         json.dump(ageData, f)
     f.close()

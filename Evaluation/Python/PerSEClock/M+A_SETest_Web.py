@@ -176,7 +176,7 @@ geo_check = [
     # 'GSE152026'
 ]
 #cpg位点读入
-cpg_path = "/home/zongxizeng/methyTest/Python/PerSEClock/24516cpg.csv"
+cpg_path = "/home/zongxizeng/MethylationEvaluation/Evaluation/Python/PerSEClock/24516cpg.csv"
 cpg = pd.read_csv(cpg_path)
 cpg = cpg["cpg"]
 
@@ -226,7 +226,7 @@ for GEO in geo_check:
         break
 
     model1 = MLP(in_features=In_features)
-    model1.load_state_dict(torch.load("/home/zongxizeng/methyTest/Python/PerSEClock/PerSE_model.pt"))#加载参数
+    model1.load_state_dict(torch.load("/home/zongxizeng/MethylationEvaluation/Evaluation/Python/PerSEClock/PerSE_model.pt"))#加载参数
 
     #测试
     MlpSEAge = compute_mae_and_mse(model1, Test_loader, DEVICE)

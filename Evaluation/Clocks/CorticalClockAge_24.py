@@ -7,7 +7,7 @@ import time
 import json
 
 table = importr('data.table')
-robjects.r.source('/home/zongxizeng/methyTest/R/24/CorticalClock.R')
+robjects.r.source('/home/zongxizeng/MethylationEvaluation/Evaluation/R/24/CorticalClock.R')
 
 
 def CorticalClockAge(GEOID):
@@ -47,7 +47,7 @@ def CorticalClockAge(GEOID):
         "Platform": pheno_data['Platform'].tolist()[0]
     }
     print(ageData)
-    # file = '/home/zongxizeng/methyTest/ResultNew/24/' + FileName
+    # file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/24/' + FileName
     # print(FileName)
     # with open(file, 'w') as f:
     #     json.dump(ageData, f)
@@ -67,7 +67,7 @@ CorticalClockAge('GSE20242')
 #            'GSE57285', 'GSE27317', 'GSE57484', 'GSE30601', 'GSE27097', 'GSE32393', 'GSE48988', 'GSE37988', 'GSE28746',
 #            'GSE63384', 'GSE19711', 'GSE37008', 'GSE34257']  # 'GSE55763',
 #     for i in geo:
-#         res_file = '/home/zongxizeng/methyTest/ResultNew/24/' + i + '_predicted_by_NO.24.json'
+#         res_file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/24/' + i + '_predicted_by_NO.24.json'
 #         if os.path.exists(res_file):
 #             print('This result file already exists')
 #             continue

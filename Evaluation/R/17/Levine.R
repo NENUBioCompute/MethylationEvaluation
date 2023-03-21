@@ -10,7 +10,7 @@ Levine <- function(betaPath) {
   dat0 <- data.frame(rownames(dat0), dat0)
   names(dat0)[names(dat0) == 'rownames.dat0.'] <- 'ProbeID'
 
-  datClock=read.csv("/home/zongxizeng/methyTest/R/17/Horvath_phenoAge_weights.csv")
+  datClock=read.csv("/home/zongxizeng/MethylationEvaluation/Evaluation/R/17/Horvath_phenoAge_weights.csv")
 
   # fill missing cpg row 0.5
   dispos <- setdiff(datClock$CpG, dat0$ProbeID)

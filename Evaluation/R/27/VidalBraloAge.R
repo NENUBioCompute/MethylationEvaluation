@@ -12,7 +12,7 @@ VidalBraloAge <- function(betaPath) {
   names(dat0)[names(dat0) == 'rownames.dat0.'] <- 'ProbeID'
 
   # directory is path where Zhang_elastic_weights.csv file is stored
-  Weights = read.csv("/home/zongxizeng/methyTest/R/VidalBralo_weights.csv")
+  Weights = read.csv("/home/zongxizeng/MethylationEvaluation/Evaluation/R/VidalBralo_weights.csv")
   Weights$probeID = as.character(Weights$probeID)
   Weights$Coefficient = as.numeric(as.character(Weights$Coefficient))
 

@@ -7,12 +7,12 @@ Horvath <- function(betaPath) {
   rownames(dat0) <- dat0$V1
   dat0 <- dat0[,-1]
 
-  source("/home/zongxizeng/methyTest/R/01/NORMALIZATION.R")
+  source("/home/zongxizeng/MethylationEvaluation/Evaluation/R/01/NORMALIZATION.R")
   trafo= function(x,adult.age=20) { x<-(x+1)/(1+adult.age); y<-ifelse(x<=1, log( x),x-1);y }
   anti.trafo= function(x,adult.age=20) { ifelse(x<0, (1+adult.age)*exp(x)-1, (1+adult.age)*x+adult.age) }
-  probeAnnotation21kdatMethUsed=read.csv("/home/zongxizeng/methyTest/R/01/probeAnnotation21kdatMethUsed.csv")
-  probeAnnotation27k=read.csv("/home/zongxizeng/methyTest/R/01/datMiniAnnotation27k.csv")
-  datClock=read.csv("/home/zongxizeng/methyTest/R/01/AdditionalFile3.csv")
+  probeAnnotation21kdatMethUsed=read.csv("/home/zongxizeng/MethylationEvaluation/Evaluation/R/01/probeAnnotation21kdatMethUsed.csv")
+  probeAnnotation27k=read.csv("/home/zongxizeng/MethylationEvaluation/Evaluation/R/01/datMiniAnnotation27k.csv")
+  datClock=read.csv("/home/zongxizeng/MethylationEvaluation/Evaluation/R/01/AdditionalFile3.csv")
 
   dat0 <- data.frame(rownames(dat0), dat0)
   names(dat0)[names(dat0) == 'rownames.dat0.'] <- 'ProbeID'
@@ -21,8 +21,8 @@ Horvath <- function(betaPath) {
   nProbes= dim(dat0)[[1]]
   dat0[,1]= gsub(x=dat0 [,1],pattern="\"",replacement="")
   # create log data
-  file.remove("/home/zongxizeng/methyTest/R/01/LogFile.txt")
-  file.create("/home/zongxizeng/methyTest/R/01/LogFile.txt")
+  file.remove("/home/zongxizeng/MethylationEvaluation/Evaluation/R/01/LogFile.txt")
+  file.create("/home/zongxizeng/MethylationEvaluation/Evaluation/R/01/LogFile.txt")
   DoNotProceed=FALSE
   cat(paste( "The methylation data set contains", nSamples, "samples (e.g. arrays) and ", nProbes, " probes."),file="LogFile.txt")
 

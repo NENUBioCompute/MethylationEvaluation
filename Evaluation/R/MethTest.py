@@ -6,7 +6,7 @@ import rpy2.robjects as robjects
 from rpy2.robjects.packages import importr
 
 table = importr('data.table')
-robjects.r.source('/home/zongxizeng/methyTest/R/Clocks.R')
+robjects.r.source('/home/zongxizeng/MethylationEvaluation/Evaluation/R/Clocks.R')
 
 file_dir = "/home/data/Standardized/express"
 geo = []
@@ -22,7 +22,7 @@ for root, dirs, files in os.walk(file_dir, topdown=False):
             AgeRange = []
             AgeRange.append(min(trueAge))
             AgeRange.append(max(trueAge))
-            FileName ='/home/zongxizeng/methyTest/result/' + i + "_predicted.json"
+            FileName ='/home/zongxizeng/MethylationEvaluation/Evaluation/result/' + i + "_predicted.json"
             print(FileName)
             localTime = time.localtime()
             curTime = time.strftime("%Y-%m-%d %H:%M:%S", localTime)

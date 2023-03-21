@@ -39,7 +39,7 @@ def FeSTwoAge(GEOID):
         "TrueAge": trueAge,
         "Platform": pheno_data['Platform'].tolist()[0]
     }
-    file = '/home/zongxizeng/methyTest/ResultNew/09/' + GEOID + "_predicted_by_NO.09.json"
+    file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/09/' + GEOID + "_predicted_by_NO.09.json"
     with open(file, 'w') as f:
         json.dump(ageData, f)
     f.close()

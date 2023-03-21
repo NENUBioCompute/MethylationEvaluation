@@ -7,7 +7,7 @@ import time
 import json
 
 table = importr('data.table')
-robjects.r.source('/home/zongxizeng/methyTest/R/17/Levine.R')
+robjects.r.source('/home/zongxizeng/MethylationEvaluation/Evaluation/R/17/Levine.R')
 
 
 def LevineAge(GEOID):
@@ -47,7 +47,7 @@ def LevineAge(GEOID):
         "TrueAge": trueAge,
         "Platform": pheno_data['Platform'].tolist()[0]
     }
-    file = '/home/zongxizeng/methyTest/ResultNew/17/' + FileName
+    file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/17/' + FileName
     print(ageData)
     # with open(file, 'w') as f:
     #     json.dump(ageData, f)
@@ -72,7 +72,7 @@ LevineAge('GSE20242')
 #            'GSE151604', 'GSE99624', 'GSE36812', 'GSE73377', 'GSE48988', 'GSE59457', 'GSE138279', 'GSE25892', 'GSE64495',
 #            'GSE90060', 'GSE60132', 'GSE92767', 'GSE55763']
 #     for i in ['GSE67444', ]:
-#         res_file = '/home/zongxizeng/methyTest/result/17/' + i + '_predicted_by_NO.17.json'
+#         res_file = '/home/zongxizeng/MethylationEvaluation/Evaluation/result/17/' + i + '_predicted_by_NO.17.json'
 #         if os.path.exists(res_file):
 #             print('This result file already exists')
 #             continue

@@ -8,7 +8,7 @@ LinAge <- function(betaPath) {
   names(dat0)[names(dat0) == 'rownames.dat0.'] <- 'ProbeID'
 
   # 读入权重文件
-  Weights=read.csv("/home/zongxizeng/methyTest/R/06/Lin_Weights.csv")
+  Weights=read.csv("/home/zongxizeng/MethylationEvaluation/Evaluation/R/06/Lin_Weights.csv")
 
   # fill missing cpg row 0.5
   dispos <- setdiff(Weights$probeID, dat0$ProbeID)

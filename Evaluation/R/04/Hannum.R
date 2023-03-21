@@ -9,7 +9,7 @@ Hannum <- function(betaPath) {
   dat0 <- data.frame(rownames(dat0), dat0)
   names(dat0)[names(dat0) == 'rownames.dat0.'] <- 'ProbeID'
 
-  datClock <- read.table("/home/zongxizeng/methyTest/R/04/Hannum_TableS2_71probes.txt",header=T,sep="\t")
+  datClock <- read.table("/home/zongxizeng/MethylationEvaluation/Evaluation/R/04/Hannum_TableS2_71probes.txt",header=T,sep="\t")
 
   # fill missing cpg row 0.5
   dispos <- setdiff(datClock$Marker, dat0$ProbeID)

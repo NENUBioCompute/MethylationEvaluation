@@ -9,7 +9,7 @@ import rpy2.robjects as robjects
 from rpy2.robjects.packages import importr
 
 table = importr('data.table')
-robjects.r.source('/home/zongxizeng/methyTest/R/Clocks_T.R')
+robjects.r.source('/home/zongxizeng/MethylationEvaluation/Evaluation/R/Clocks_T.R')
 
 
 def EPMAge(GEOID):
@@ -48,7 +48,7 @@ def EPMAge(GEOID):
         "TrueAge": trueAge,
         "Platform": pheno_data['Platform'].tolist()[0]
     }
-    file = '/home/zongxizeng/methyTest/ResultNew/22/' + GEOID + "_predicted_by_NO.22.json"
+    file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/22/' + GEOID + "_predicted_by_NO.22.json"
     with open(file, 'w') as f:
         json.dump(ageData, f)
     f.close()

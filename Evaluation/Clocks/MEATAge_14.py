@@ -10,7 +10,7 @@ table = importr('data.table')
 MEAT = importr('MEAT')
 SummarizedExperiment = importr('SummarizedExperiment')
 
-robjects.r.source('/home/zongxizeng/methyTest/R/14/MEAT.R')
+robjects.r.source('/home/zongxizeng/MethylationEvaluation/Evaluation/R/14/MEAT.R')
 
 
 def MEATAge(GEOID):
@@ -50,7 +50,7 @@ def MEATAge(GEOID):
         "Platform": pheno_data['Platform'].tolist()[0]
     }
     print(ageData)
-    # file = '/home/zongxizeng/methyTest/ResultNew/14/' + FileName
+    # file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/14/' + FileName
     # with open(file, 'w') as f:
     #     json.dump(ageData, f)
     # f.close()
@@ -65,7 +65,7 @@ MEATAge('GSE151602')
 #              'GSE55763_6','GSE55763_7','GSE55763_8','GSE55763_9','GSE55763_10',
 #              'GSE55763_11','GSE55763_12']
 #     for i in nogeo:
-#         res_file = '/home/zongxizeng/methyTest/ResultNew/14/' + i + '_predicted_by_NO.14.json'
+#         res_file = '/home/zongxizeng/MethylationEvaluation/Evaluation/ResultNew/14/' + i + '_predicted_by_NO.14.json'
 #         if os.path.exists(res_file):
 #             print('This result file already exists')
 #             continue

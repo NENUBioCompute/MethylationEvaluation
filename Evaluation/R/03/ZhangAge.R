@@ -11,7 +11,7 @@ ZhangAge <- function (betaPath) {
   rownames(dat0) <- dat0$V1
   dat0 <- dat0[,-1]
 
-  read.table("/home/zongxizeng/methyTest/R/03/blup.coef",stringsAsFactor=F,header=T)->blupcoef
+  read.table("/home/zongxizeng/MethylationEvaluation/Evaluation/R/03/blup.coef",stringsAsFactor=F,header=T)->blupcoef
   # fill missing cpg row 0.5
   dispos <- setdiff(blupcoef[,1][-1], rownames(dat0))
   dis <- matrix(data=0.5, nrow = length(dispos), ncol = length(colnames(dat0)), byrow = FALSE, dimnames = list(dispos,colnames(dat0)))
@@ -58,8 +58,8 @@ ZhangAge <- function (betaPath) {
   ############# 3. get the coefficients of each probe from Elastic Net/BLUP method, !!!!WE HAVE TWO PREDICTORS!!!#############
 
   print("2. Loading predictors")
-  read.table("/home/zongxizeng/methyTest/R/03/en.coef",stringsAsFactor=F,header=T)->encoef
-  read.table("/home/zongxizeng/methyTest/R/03/blup.coef",stringsAsFactor=F,header=T)->blupcoef
+  read.table("/home/zongxizeng/MethylationEvaluation/Evaluation/R/03/en.coef",stringsAsFactor=F,header=T)->encoef
+  read.table("/home/zongxizeng/MethylationEvaluation/Evaluation/R/03/blup.coef",stringsAsFactor=F,header=T)->blupcoef
 
   en_int<-encoef[1,2]
   blup_int<-blupcoef[1,2]
