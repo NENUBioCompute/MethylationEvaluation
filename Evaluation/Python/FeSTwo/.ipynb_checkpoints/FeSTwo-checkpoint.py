@@ -1,5 +1,5 @@
 
-from MethylationEvaluation.Evaluation.Python.FeSTwo.Lib_FeatureEngineering import NewFeatures
+from MethylationEvaluation.Utilities.Algorithms.FeSTwo.Lib_FeatureEngineering import NewFeatures
 from MethylationEvaluation.Utilities.FileDealers.PickleDealer import PickleDealer
 import re
 import time
@@ -20,7 +20,7 @@ class FeSTwo:
         :param data: feature matrix
         :return: predicted results
         """
-        return self.model.predict(methylation_data.values)
+        return self.model.predict(methylation_data)
 
     def fetch_feature_name(self):
         pattern = re.compile('"(.+?)"')
@@ -49,7 +49,7 @@ class FeSTwo:
         methylation = pd.DataFrame(np.full((len(data), len(self.raw)), 0.5), columns=self.raw, index=data.index)
         common = set(self.raw).intersection(set(list(data)))
         methylation[list(common)] = data[list(common)].astype('float32')
-        dfRaw = pd.DataFrame(methylation[list(self.raw)], dtype=np.float64)
+        dfRaw = pd.DataFrame(methylation[self.raw], dtype=np.float64)
         return dfRaw
 
     def get_sqare_raw_vertor(self, data):
@@ -64,7 +64,20 @@ class FeSTwo:
         fea_vector = raw_square[self.processed]
         fea_vector = fea_vector.replace('NaN', 0.5)
         return fea_vector
+    
+    def main(file_path):
+        methylation = pd.read_csv(file_path)
+        methylation.index = methylation['Unnamed: 0']
+        methylation = methylation[methylation.columns[1:]].T
+        # get feature vector
+        FE = FeSTwo("FeSTwo_lr_Model.pkl", "command_Combination_FesTwo_lr_raw_Square.pickle")
+        fea_vector = FE.get_sqare_raw_vertor(methylation)
+        # get predicted ages
+        pred_age = FE.predict(fea_vector)
+      
+        return pred_age
 
+    
 if __name__ == '__main__':
     dataset = 'GSE20236'
     start = time.time()

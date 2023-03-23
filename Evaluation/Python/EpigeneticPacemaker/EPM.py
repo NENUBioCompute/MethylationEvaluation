@@ -1,6 +1,9 @@
 
-from MethylationEvaluation.Utilities.FileDealers.PickleDealer import PickleDealer
-
+from Utilities.FileDealers.PickleDealer import PickleDealer
+import pandas as pd
+import numpy as np
+import os
+    
 class EPM:
     """
     The Epigenetic Pacemaker, EPM,
@@ -23,7 +26,29 @@ class EPM:
         :param data: feature matrix
         :return: predicted results
         """
-        return self.model.predict(methylation_data[self.cpgs].values.T)
+        try:
+            feture_vertors = methylation_data[self.cpgs].values.T
+
+        except KeyError:
+            cpgs_data = pd.DataFrame(np.full((len(methylation_data), len(self.cpgs)), 0.5), columns=self.cpgs, index=methylation_data.index)
+            common = set(self.cpgs).intersection(set(list(methylation_data)))
+            cpgs_data[list(common)] = methylation_data[list(common)].astype('float64')
+            feture_vertors = cpgs_data[self.cpgs].values.T
+
+        return self.model.predict(feture_vertors)
+    
+def EPMTest(file_path):
+    X_test = pd.read_csv(file_path)
+    X_test.index = X_test[X_test.columns[0]]
+    X_test = X_test[X_test.columns[1:]].T
+
+    # generate predicted ages sing the test data
+    epm_cv = EPM('../Python/EpigeneticPacemaker/EPM_model.pkl',
+                     '../Python/EpigeneticPacemaker/selected_cpg_sites_NO22.pickle')
+    pred_age = epm_cv.predict(X_test)
+        
+    return pred_age
+
 
 
 

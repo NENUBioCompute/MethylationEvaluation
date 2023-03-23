@@ -2,7 +2,6 @@
 import tensorflow as tf
 import numpy as np
 import pandas as pd
-import time
 
 class AltumAge:
     """
@@ -25,13 +24,32 @@ class AltumAge:
         :param data: feature matrix
         :return: predicted results
         """
-        methylation_scaled = self.scaler.transform(methylation_data[self.cpgs])
+        try:
+            methylation_scaled = self.scaler.transform(methylation_data[self.cpgs].values)
+        except KeyError:
+            cpgs_data = pd.DataFrame(np.full((len(methylation_data), len(self.cpgs)), 0.5), columns=self.cpgs,
+                                     index=methylation_data.index)
+            common = set(self.cpgs).intersection(set(list(methylation_data)))
+            cpgs_data[list(common)] = methylation_data[list(common)].astype('float64')
+            methylation_scaled = self.scaler.transform(cpgs_data[self.cpgs].values)
+
         pred_age = self.model.predict(methylation_scaled).flatten()
         return pred_age
 
 
-if __name__ =='__main__':
+def AltumAgeTest(file_path):
+        
+    methylation = pd.read_csv(file_path)
+    methylation.index = methylation[methylation.columns[0]]
+    methylation = methylation[methylation.columns[1:]].T
 
+    AA = AltumAge('../Python/AltumAge/AltumAge.h5', '../Python/AltumAge/scaler.pkl', '../Python/AltumAge/multi_platform_cpgs.pkl')
+    pred = AA.predict(methylation)
+    return pred
+    
+
+if __name__ =='__main__':
+    import time
     dataset = 'GSE20236'
     start = time.time()
 

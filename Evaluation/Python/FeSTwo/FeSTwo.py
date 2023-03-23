@@ -1,8 +1,7 @@
 
-from MethylationEvaluation.Utilities.Algorithms.FeSTwo.Lib_FeatureEngineering import NewFeatures
-from MethylationEvaluation.Utilities.FileDealers.PickleDealer import PickleDealer
+from Evaluation.Python.FeSTwo.Lib_FeatureEngineering import NewFeatures
+from Utilities.FileDealers.PickleDealer import PickleDealer
 import re
-import time
 import pandas as pd
 import numpy as np
 import copy
@@ -64,8 +63,21 @@ class FeSTwo:
         fea_vector = raw_square[self.processed]
         fea_vector = fea_vector.replace('NaN', 0.5)
         return fea_vector
+    
+def FeSTwoTest(file_path):
+    methylation = pd.read_csv(file_path)
+    methylation.index = methylation[methylation.columns[0]]
+    methylation = methylation[methylation.columns[1:]].T
+    # get feature vector
+    FE = FeSTwo("../Python/FeSTwo/FeSTwo_lr_Model.pkl", "../Python/FeSTwo/command_Combination_FesTwo_lr_raw_Square.pickle")
+    fea_vector = FE.get_sqare_raw_vertor(methylation)
+    # get predicted ages
+    pred_age = FE.predict(fea_vector)
+    return pred_age
 
+    
 if __name__ == '__main__':
+    import time
     dataset = 'GSE20236'
     start = time.time()
 
@@ -82,7 +94,6 @@ if __name__ == '__main__':
 
     # get predicted ages
     pred_age = FE.predict(fea_vector)
-    print(pred_age)
 
     end = time.time()
     consume_time = (end - start) / 60

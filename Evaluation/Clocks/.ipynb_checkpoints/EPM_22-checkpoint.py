@@ -4,7 +4,7 @@ import time
 
 import pandas as pd
 
-from Evaluation.Python.EpigeneticPacemaker.EPM import EPM
+from Evaluation.Python.EpigeneticPacemaker.EPM import EPMTest
 # import rpy2.robjects as robjects
 # from rpy2.robjects.packages import importr
 
@@ -14,17 +14,16 @@ from Evaluation.Python.EpigeneticPacemaker.EPM import EPM
 
 def EPMAge(GEOID):
     # pheno data path
-    beta_path = '/home/data/Standardized/express/' + GEOID + '_beta.csv'
+    pheno_path = '/home/data/Standardized/pheno/' + GEOID + '_pheno.csv'
+    # get  pheno data
+    pheno_data = pd.read_csv(pheno_path)
 
     # EPM
     start_t = time.time()
     print('================NO.22=====================')
-    EPMAge = EPM.EPMTest(beta_path)
+    EPMAge = EPMTest(GEOID)
     end_t = time.time()
-    print(end_t-start_t)
 
-GEOID = 'GSE20242'
-EPMAge(GEOID)
 #     trueAge = pheno_data['Age'].tolist()
 #     FileName = GEOID + "_predicted_by_NO.22.json"
 #     localTime = time.localtime()
