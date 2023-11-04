@@ -1,0 +1,154 @@
+The methylation data set contains 50 samples (e.g. arrays) and  5281  probes.
+ 
+ Comment: There are lots of missing values for X chromosomal probes for some of the samples. This is not a problem when it comes to estimating age but I cannot predict the gender of these samples.
+ 
+ Warnings were generated for the following samples.
+ GSM507272 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507273 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507274 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507275 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507276 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507277 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507278 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507279 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507280 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507281 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507282 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507283 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507284 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507285 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507286 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507287 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507288 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507289 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507290 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507291 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507292 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507293 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507294 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507295 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507296 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507297 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507298 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507299 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507300 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507301 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507302 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507303 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507304 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507305 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507306 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507307 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507308 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507309 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507310 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507311 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507312 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507313 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507314 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507315 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507316 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507317 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507318 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507319 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507320 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM507321 
+ Hint: Check the output file for more details.

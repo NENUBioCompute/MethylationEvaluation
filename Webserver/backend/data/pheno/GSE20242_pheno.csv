@@ -1,0 +1,51 @@
+ID,Tissue,Disease,Condition,Age,Age_unit,Gender,Platform
+GSM507272,Monocyte,Healthy,,37,Year,Female,27K
+GSM507273,Monocyte,Healthy,,47,Year,Female,27K
+GSM507274,Monocyte,Healthy,,35,Year,Female,27K
+GSM507275,Monocyte,Healthy,,16,Year,Female,27K
+GSM507276,Monocyte,Healthy,,37,Year,Male,27K
+GSM507277,Monocyte,Healthy,,38,Year,Female,27K
+GSM507278,Monocyte,Healthy,,20,Year,Female,27K
+GSM507279,Monocyte,Healthy,,28,Year,Female,27K
+GSM507280,Monocyte,Healthy,,33,Year,Male,27K
+GSM507281,Monocyte,Healthy,,25,Year,Male,27K
+GSM507282,Monocyte,Healthy,,48,Year,Male,27K
+GSM507283,Monocyte,Healthy,,44,Year,Female,27K
+GSM507284,Monocyte,Healthy,,68,Year,Female,27K
+GSM507285,Monocyte,Healthy,,35,Year,Female,27K
+GSM507286,Monocyte,Healthy,,52,Year,Male,27K
+GSM507287,Monocyte,Healthy,,42,Year,Female,27K
+GSM507288,Monocyte,Healthy,,27,Year,Female,27K
+GSM507289,Monocyte,Healthy,,52,Year,Female,27K
+GSM507290,Monocyte,Healthy,,44,Year,Female,27K
+GSM507291,Monocyte,Healthy,,27,Year,Female,27K
+GSM507292,Monocyte,Healthy,,29,Year,Male,27K
+GSM507293,Monocyte,Healthy,,28,Year,Female,27K
+GSM507294,Monocyte,Healthy,,20,Year,Female,27K
+GSM507295,Monocyte,Healthy,,30,Year,Female,27K
+GSM507296,Monocyte,Healthy,,18,Year,Female,27K
+GSM507297,Monocyte,Healthy,,69,Year,Male,27K
+GSM507298,T cell,Healthy,,37,Year,Female,27K
+GSM507299,T cell,Healthy,,47,Year,Female,27K
+GSM507300,T cell,Healthy,,35,Year,Female,27K
+GSM507301,T cell,Healthy,,16,Year,Female,27K
+GSM507302,T cell,Healthy,,24,Year,Female,27K
+GSM507303,T cell,Healthy,,37,Year,Male,27K
+GSM507304,T cell,Healthy,,38,Year,Female,27K
+GSM507305,T cell,Healthy,,20,Year,Female,27K
+GSM507306,T cell,Healthy,,28,Year,Female,27K
+GSM507307,T cell,Healthy,,33,Year,Male,27K
+GSM507308,T cell,Healthy,,25,Year,Male,27K
+GSM507309,T cell,Healthy,,48,Year,Male,27K
+GSM507310,T cell,Healthy,,44,Year,Female,27K
+GSM507311,T cell,Healthy,,68,Year,Female,27K
+GSM507312,T cell,Healthy,,27,Year,Female,27K
+GSM507313,T cell,Healthy,,52,Year,Female,27K
+GSM507314,T cell,Healthy,,44,Year,Female,27K
+GSM507315,T cell,Healthy,,27,Year,Female,27K
+GSM507316,T cell,Healthy,,29,Year,Male,27K
+GSM507317,T cell,Healthy,,28,Year,Female,27K
+GSM507318,T cell,Healthy,,20,Year,Female,27K
+GSM507319,T cell,Healthy,,30,Year,Female,27K
+GSM507320,T cell,Healthy,,18,Year,Female,27K
+GSM507321,T cell,Healthy,,69,Year,Male,27K

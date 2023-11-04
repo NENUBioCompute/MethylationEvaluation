@@ -1,0 +1,54 @@
+ID,Tissue,Disease,Condition,Age,Age_unit,Gender,Race,Platform
+GSM2934897,Bucca,Fetal alcohol spectrum disorder,,7.0,Year,Female,Multi,450K
+GSM2934898,Bucca,Fetal alcohol spectrum disorder,,9.0,Year,Male,Native american,450K
+GSM2934899,Bucca,Fetal alcohol spectrum disorder,,14.0,Year,Female,Native american,450K
+GSM2934900,Bucca,Fetal alcohol spectrum disorder,,4.0,Year,Male,Native american,450K
+GSM2934901,Bucca,Fetal alcohol spectrum disorder,,7.0,Year,Male,Multi,450K
+GSM2934902,Bucca,Fetal alcohol spectrum disorder,,6.0,Year,Male,Native american,450K
+GSM2934903,Bucca,Fetal alcohol spectrum disorder,,6.0,Year,Male,Native american,450K
+GSM2934904,Bucca,Fetal alcohol spectrum disorder,,6.0,Year,Male,Native american,450K
+GSM2934905,Bucca,Fetal alcohol spectrum disorder,,5.0,Year,Male,,450K
+GSM2934906,Bucca,Fetal alcohol spectrum disorder,,18.0,Year,Male,Multi,450K
+GSM2934907,Bucca,Fetal alcohol spectrum disorder,,18.0,Year,Female,Caucasian,450K
+GSM2934908,Bucca,Fetal alcohol spectrum disorder,,8.0,Year,Male,Multi,450K
+GSM2934909,Bucca,Fetal alcohol spectrum disorder,,5.0,Year,Male,Multi,450K
+GSM2934910,Bucca,Fetal alcohol spectrum disorder,,10.0,Year,Female,Native american,450K
+GSM2934911,Bucca,Fetal alcohol spectrum disorder,,11.0,Year,Male,First nations,450K
+GSM2934912,Bucca,Fetal alcohol spectrum disorder,,11.0,Year,Female,Native american,450K
+GSM2934913,Bucca,Fetal alcohol spectrum disorder,,3.5,Year,Female,,450K
+GSM2934914,Bucca,Fetal alcohol spectrum disorder,,5.0,Year,Male,Native american,450K
+GSM2934915,Bucca,Fetal alcohol spectrum disorder,,12.0,Year,Male,Multi,450K
+GSM2934916,Bucca,Fetal alcohol spectrum disorder,,12.0,Year,Male,Multi,450K
+GSM2934917,Bucca,Fetal alcohol spectrum disorder,,14.0,Year,Male,Native american,450K
+GSM2934918,Bucca,Fetal alcohol spectrum disorder,,18.0,Year,Female,Native american,450K
+GSM2934919,Bucca,Fetal alcohol spectrum disorder,,7.0,Year,Male,Native american,450K
+GSM2934920,Bucca,Fetal alcohol spectrum disorder,,6.0,Year,Female,Native american,450K
+GSM2934921,Bucca,Fetal alcohol spectrum disorder,,9.0,Year,Male,Caucasian,450K
+GSM2934922,Bucca,Fetal alcohol spectrum disorder,,6.0,Year,Female,Native american,450K
+GSM2934923,Bucca,Healthy,,11.0,Year,Female,Caucasian,450K
+GSM2934924,Bucca,Healthy,,16.0,Year,Female,Caucasian,450K
+GSM2934925,Bucca,Healthy,,16.0,Year,Male,Caucasian,450K
+GSM2934926,Bucca,Healthy,,6.0,Year,Female,Caucasian,450K
+GSM2934927,Bucca,Healthy,,6.0,Year,Female,Caucasian,450K
+GSM2934928,Bucca,Healthy,,15.0,Year,Male,Caucasian,450K
+GSM2934929,Bucca,Healthy,,12.0,Year,Male,Caucasian,450K
+GSM2934930,Bucca,Healthy,,17.0,Year,Male,Multi,450K
+GSM2934931,Bucca,Healthy,,14.0,Year,Male,Multi,450K
+GSM2934932,Bucca,Healthy,,12.0,Year,Female,Caucasian,450K
+GSM2934933,Bucca,Healthy,,17.0,Year,Male,Caucasian,450K
+GSM2934934,Bucca,Healthy,,13.0,Year,Female,Caucasian,450K
+GSM2934935,Bucca,Healthy,,6.0,Year,Male,Native american,450K
+GSM2934936,Bucca,Healthy,,6.0,Year,Female,,450K
+GSM2934937,Bucca,Healthy,,7.0,Year,Female,Caucasian,450K
+GSM2934938,Bucca,Healthy,,5.0,Year,Female,Caucasian,450K
+GSM2934939,Bucca,Healthy,,16.0,Year,Female,Caucasian,450K
+GSM2934940,Bucca,Healthy,,15.0,Year,Male,Caucasian,450K
+GSM2934941,Bucca,Healthy,,5.0,Year,Female,Caucasian,450K
+GSM2934942,Bucca,Healthy,,9.0,Year,Female,Multi,450K
+GSM2934943,Bucca,Healthy,,7.0,Year,Male,Multi,450K
+GSM2934944,Bucca,Healthy,,11.0,Year,Female,Caucasian,450K
+GSM2934945,Bucca,Healthy,,8.0,Year,Female,Caucasian,450K
+GSM2934946,Bucca,Healthy,,11.0,Year,Female,Caucasian,450K
+GSM2934947,Bucca,Healthy,,16.0,Year,Male,Caucasian,450K
+GSM2934948,Bucca,Healthy,,16.0,Year,Male,Caucasian,450K
+GSM2934949,Bucca,Healthy,,14.0,Year,Female,Caucasian,450K
