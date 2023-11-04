@@ -1,0 +1,23 @@
+[
+    {
+        "firstName": "Xizeng",
+        "lastName": "Zong",
+        "email": "zongxizeng@gmail.com",
+        "password": "123456",
+        "institution ": "CCUT",
+        "country": "China",
+        "title ": "Master",
+        "status": true
+    },
+    {
+        "firstName": "test",
+        "lastName": "T",
+        "email": "test@gmail.com",
+        "password": "123456",
+        "institution ": "CCUT",
+        "country": "China",
+        "title ": "Master",
+        "status": false
+    }
+
+]
