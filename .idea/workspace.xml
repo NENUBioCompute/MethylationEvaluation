@@ -1,11 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7a99977a-264f-4740-bbc8-348d583afe36" name="Default Changelist" comment="update R and Python test function">
       <change beforePath="$PROJECT_DIR$/.idea/MethylationEvaluation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MethylationEvaluation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/.RDataFiles/-844091334.RData" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/.RDataFiles/-844091334.RData" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/677.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/Clocks/RunClocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Clocks/RunClocks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/Clocks/erere.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/LogFile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/MEAT.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/Mongo/GetDataFromDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Mongo/GetDataFromDB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/Mongo/MongoBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Mongo/MongoBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/Mongo/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Mongo/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/Python/AltumAge/AltumAge.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Python/AltumAge/AltumAge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/Python/FeSTwo/FeSTwo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Python/FeSTwo/FeSTwo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/Python/PerSEClock/PerNew.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Python/PerSEClock/PerNew.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/Python/PerSEClock/PerSEClock.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Python/PerSEClock/PerSEClock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/R/01/Horvath.R" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/R/01/Horvath.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/R/14/MEAT.R" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/R/14/MEAT.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/ddda.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/e_mail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/eed.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/head.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/tes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/teset.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/test_up.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/timepredict/time_predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/timepredict/time_predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/ttty.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/backend/tty.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Browse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/Browse.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Clocks.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Contactus.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/Contactus.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Tutorials.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/Tutorials.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Upload.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/Upload.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Wait.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/Wait.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/login/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/login/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/login/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/result/Result.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/result/Result.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/result/Table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/result/Table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/test.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/test.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,32 +78,50 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="liyunkai" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="zongxz" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Webserver/backend" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FZQJndDHX7NSIBpq0duChs2eBl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "last_opened_file_path": "D:/new/MethylationEvaluation",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "http.proxy",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PyCharmProject\MethylationEvaluation\Utilities\Algorithms" />
@@ -123,6 +188,15 @@
       <workItem from="1673786593604" duration="1118000" />
       <workItem from="1673787726440" duration="431000" />
       <workItem from="1679361410441" duration="743000" />
+      <workItem from="1699278655781" duration="13000" />
+      <workItem from="1699318074460" duration="1181000" />
+      <workItem from="1699347811277" duration="487000" />
+      <workItem from="1699348309165" duration="612000" />
+      <workItem from="1699447516292" duration="1588000" />
+      <workItem from="1699515492940" duration="2172000" />
+      <workItem from="1700053364176" duration="1057000" />
+      <workItem from="1702891703795" duration="4179000" />
+      <workItem from="1702981074189" duration="1823000" />
     </task>
     <task id="LOCAL-00001" summary="update process">
       <created>1664981017092</created>
@@ -187,6 +261,21 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="liyunkai" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -197,7 +286,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/zongxz" />
+                        <option value="lyk11_12" />
                       </list>
                     </value>
                   </entry>
@@ -208,7 +297,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update process" />
