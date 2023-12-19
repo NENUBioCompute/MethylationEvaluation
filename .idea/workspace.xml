@@ -4,55 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a99977a-264f-4740-bbc8-348d583afe36" name="Default Changelist" comment="update R and Python test function">
-      <change beforePath="$PROJECT_DIR$/.idea/MethylationEvaluation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MethylationEvaluation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="7a99977a-264f-4740-bbc8-348d583afe36" name="Default Changelist" comment="update&#10;Initial commit&#10;Add files via upload">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/.RDataFiles/-844091334.RData" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/.RDataFiles/-844091334.RData" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/677.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/Clocks/RunClocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Clocks/RunClocks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/Clocks/erere.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/LogFile.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/MEAT.R" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/Mongo/GetDataFromDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Mongo/GetDataFromDB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/Mongo/MongoBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Mongo/MongoBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/Mongo/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Mongo/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/Python/AltumAge/AltumAge.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Python/AltumAge/AltumAge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/Python/FeSTwo/FeSTwo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Python/FeSTwo/FeSTwo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/Python/PerSEClock/PerNew.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Python/PerSEClock/PerNew.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/Python/PerSEClock/PerSEClock.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/Python/PerSEClock/PerSEClock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/R/01/Horvath.R" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/R/01/Horvath.R" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/R/14/MEAT.R" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/R/14/MEAT.R" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/ddda.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/e_mail.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/eed.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/head.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/tes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/teset.R" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/test_up.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/timepredict/time_predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/backend/timepredict/time_predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/ttty.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/backend/tty.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Browse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/Browse.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Clocks.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Contactus.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/Contactus.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Tutorials.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/Tutorials.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Upload.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/Upload.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/Wait.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/Wait.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/login/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/login/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/login/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/result/Result.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/result/Result.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/result/Table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/result/Table.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/frontend/src/views/test.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/frontend/src/views/test.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +149,7 @@
       <workItem from="1699515492940" duration="2172000" />
       <workItem from="1700053364176" duration="1057000" />
       <workItem from="1702891703795" duration="4179000" />
-      <workItem from="1702981074189" duration="1823000" />
+      <workItem from="1702981074189" duration="2508000" />
     </task>
     <task id="LOCAL-00001" summary="update process">
       <created>1664981017092</created>
@@ -254,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1679361663763</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update&#10;Initial commit&#10;Add files via upload">
+      <option name="closed" value="true" />
+      <created>1702983213784</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1702983213784</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +247,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="lyk11_12" />
+                        <option value="liyunkai" />
                       </list>
                     </value>
                   </entry>
@@ -305,7 +266,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="add methyLImp" />
     <MESSAGE value="update R and Python test function" />
-    <option name="LAST_COMMIT_MESSAGE" value="update R and Python test function" />
+    <MESSAGE value="update&#10;Initial commit&#10;Add files via upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="update&#10;Initial commit&#10;Add files via upload" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MethylationEvaluation$FillNAValue.coverage" NAME="FillNAValue Coverage Results" MODIFIED="1673171031991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MethylationEvaluation" />
