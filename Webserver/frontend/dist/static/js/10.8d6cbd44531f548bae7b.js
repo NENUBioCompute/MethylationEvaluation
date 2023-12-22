@@ -1,2 +1,0 @@
-webpackJsonp([10],{BmGV:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("Disease")])},staticRenderFns:[]};var a=n("VU/8")({data:function(){return{}},methods:{}},r,!1,function(e){n("FUbY")},"data-v-5a374860",null);t.default=a.exports},FUbY:function(e,t){}});
-//# sourceMappingURL=10.8d6cbd44531f548bae7b.js.map

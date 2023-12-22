@@ -1,2 +1,0 @@
-webpackJsonp([8],{YHyT:function(e,t){},pPWB:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("Tissue")])},staticRenderFns:[]};var s=n("VU/8")({data:function(){return{}},methods:{}},r,!1,function(e){n("YHyT")},"data-v-7a500d3e",null);t.default=s.exports}});
-//# sourceMappingURL=8.9f597e3b7ef1b22c36d6.js.map
