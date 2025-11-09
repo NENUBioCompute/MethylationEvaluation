@@ -180,7 +180,7 @@ Each batch evaluation automatically saves prediction results as JSON files in [r
 ✅ Dataset-agnostic and reproducible pipeline
 
 
-🧬 Citation
+## 🧬 Citation
 
 If you use DNAmClocksEvaluation in your research, please cite this repository appropriately:
 - Wang, H. et al. A Comprehensive Assessment of Methylation-Based Age Prediction Methods. bioRxiv, 2024.2012.2023.627443 (2024). https://doi.org/10.1101/2024.12.23.627443
