@@ -173,11 +173,11 @@ Each batch evaluation automatically saves prediction results as JSON files in [r
 
 ## 🧠 Features
 
-✅ Unified interface for 16+ DNAm clocks
-✅ Supports both Python & R clock models
-✅ Modular design for easy extension
-✅ Batch execution & automatic result storage
-✅ Dataset-agnostic and reproducible pipeline
+- ✅ Unified interface for 16+ DNAm clocks
+- ✅ Supports both Python & R clock models
+- ✅ Modular design for easy extension
+- ✅ Batch execution & automatic result storage
+- ✅ Dataset-agnostic and reproducible pipeline
 
 
 ## 🧬 Citation
