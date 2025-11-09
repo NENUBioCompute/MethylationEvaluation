@@ -1,6 +1,6 @@
 {
     "FileName": "GSE151604_predicted_by_SkinBloodClock.json",
-    "datetime": "2025-11-09 13:05:42",
+    "datetime": "2025-11-09 15:32:25",
     "Algorithm": "SkinBloodClock",
     "Dataset": "GSE151604",
     "AgeRange": [
@@ -8,7 +8,7 @@
         79.0
     ],
     "SampleNum": 10,
-    "ConsumeTime(Min)": "2.068s",
+    "ConsumeTime(Min)": "2.548s",
     "ID_REF": [
         "GSM4586484",
         "GSM4586485",

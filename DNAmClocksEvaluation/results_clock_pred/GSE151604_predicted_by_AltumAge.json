@@ -1,6 +1,6 @@
 {
     "FileName": "GSE151604_predicted_by_AltumAge.json",
-    "datetime": "2025-11-09 13:05:24",
+    "datetime": "2025-11-09 15:32:04",
     "Algorithm": "AltumAge",
     "Dataset": "GSE151604",
     "AgeRange": [
@@ -8,7 +8,7 @@
         79.0
     ],
     "SampleNum": 10,
-    "ConsumeTime(Min)": "23.464s",
+    "ConsumeTime(Min)": "23.699s",
     "ID_REF": [
         "GSM4586484",
         "GSM4586485",

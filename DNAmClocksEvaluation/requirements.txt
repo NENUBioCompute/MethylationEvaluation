@@ -1,0 +1,36 @@
+# ============================================
+# DNAmClocksEvaluation Requirements
+# ============================================
+# This project requires both Python and R environments.
+# Please ensure that both are installed before running the tool.
+# Python version: >= 3.8
+# R version:     >= 4.1
+# --------------------------------------------
+
+# === Python Dependencies ===
+tensorflow==2.15.0
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.1
+scikit-learn==1.6.0
+EpigeneticPacemaker
+
+# === Optional Utilities (recommended) ===
+# tqdm          # progress bars for batch runs
+# pyreadr       # optional: for reading RData files in Python
+# rpy2          # optional: for bridging Python <-> R if not already handled
+
+# ============================================
+# === R Dependencies (to be installed manually) ===
+# ============================================
+# Open R console and run the following commands:
+
+# install.packages("BiocManager")
+# BiocManager::install("MEAT")
+# BiocManager::install("methylclock")
+
+# --------------------------------------------
+# Alternatively, you can use Rscript:
+# Rscript -e "if (!requireNamespace('BiocManager', quietly=TRUE)) install.packages('BiocManager'); \
+#             BiocManager::install(c('MEAT', 'methylclock'))"
+# --------------------------------------------
