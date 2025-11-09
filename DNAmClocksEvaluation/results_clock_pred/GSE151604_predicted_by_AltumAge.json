@@ -1,0 +1,110 @@
+{
+    "FileName": "GSE151604_predicted_by_AltumAge.json",
+    "datetime": "2025-11-09 13:05:24",
+    "Algorithm": "AltumAge",
+    "Dataset": "GSE151604",
+    "AgeRange": [
+        79.0,
+        79.0
+    ],
+    "SampleNum": 10,
+    "ConsumeTime(Min)": "23.464s",
+    "ID_REF": [
+        "GSM4586484",
+        "GSM4586485",
+        "GSM4586486",
+        "GSM4586487",
+        "GSM4586488",
+        "GSM4586489",
+        "GSM4586490",
+        "GSM4586491",
+        "GSM4586492",
+        "GSM4586493"
+    ],
+    "Age_unit": "Year",
+    "Tissue": [
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin"
+    ],
+    "Condition": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+    ],
+    "Disease": [
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy"
+    ],
+    "Gender": [
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female"
+    ],
+    "Race": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+    ],
+    "Platform": "Unknown",
+    "PredAge": [
+        71.97012329101562,
+        75.27344512939453,
+        76.62036895751953,
+        76.07540130615234,
+        73.62969207763672,
+        75.82733154296875,
+        74.31651306152344,
+        74.13127899169922,
+        75.39766693115234,
+        72.4256362915039
+    ],
+    "TrueAge": [
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0
+    ]
+}

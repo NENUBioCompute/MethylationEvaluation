@@ -1,0 +1,110 @@
+{
+    "FileName": "GSE151604_predicted_by_VidalBraloAge.json",
+    "datetime": "2025-11-09 13:03:34",
+    "Algorithm": "VidalBraloAge",
+    "Dataset": "GSE151604",
+    "AgeRange": [
+        79.0,
+        79.0
+    ],
+    "SampleNum": 10,
+    "ConsumeTime(Min)": "2.590s",
+    "ID_REF": [
+        "GSM4586484",
+        "GSM4586485",
+        "GSM4586486",
+        "GSM4586487",
+        "GSM4586488",
+        "GSM4586489",
+        "GSM4586490",
+        "GSM4586491",
+        "GSM4586492",
+        "GSM4586493"
+    ],
+    "Age_unit": "Year",
+    "Tissue": [
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin"
+    ],
+    "Condition": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+    ],
+    "Disease": [
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy"
+    ],
+    "Gender": [
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female"
+    ],
+    "Race": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+    ],
+    "Platform": "Unknown",
+    "PredAge": [
+        77.52338049,
+        82.65638013,
+        81.20639544,
+        80.22339677000001,
+        78.41827434000001,
+        82.47672472,
+        86.17596578,
+        81.5884507,
+        82.40748927,
+        86.916777227
+    ],
+    "TrueAge": [
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0
+    ]
+}

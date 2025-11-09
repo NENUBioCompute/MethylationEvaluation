@@ -1,0 +1,110 @@
+{
+    "FileName": "GSE151604_predicted_by_MEAT.json",
+    "datetime": "2025-11-09 13:04:58",
+    "Algorithm": "MEAT",
+    "Dataset": "GSE151604",
+    "AgeRange": [
+        79.0,
+        79.0
+    ],
+    "SampleNum": 10,
+    "ConsumeTime(Min)": "60.231s",
+    "ID_REF": [
+        "GSM4586484",
+        "GSM4586485",
+        "GSM4586486",
+        "GSM4586487",
+        "GSM4586488",
+        "GSM4586489",
+        "GSM4586490",
+        "GSM4586491",
+        "GSM4586492",
+        "GSM4586493"
+    ],
+    "Age_unit": "Year",
+    "Tissue": [
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin",
+        "Skin"
+    ],
+    "Condition": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+    ],
+    "Disease": [
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy",
+        "Healthy"
+    ],
+    "Gender": [
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female",
+        "Female"
+    ],
+    "Race": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+    ],
+    "Platform": "Unknown",
+    "PredAge": [
+        68.67331428885498,
+        70.52519573365737,
+        73.1900531247594,
+        65.32823858353437,
+        69.29052611055118,
+        70.90941978674158,
+        65.20129694237262,
+        69.18894381246633,
+        71.45497793839516,
+        65.35759066257421
+    ],
+    "TrueAge": [
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0,
+        79.0
+    ]
+}

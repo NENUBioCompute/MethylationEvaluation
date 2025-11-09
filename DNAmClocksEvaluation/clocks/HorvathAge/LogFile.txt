@@ -1,0 +1,31 @@
+The methylation data set contains 10 samples (e.g. arrays) and  866091  probes.
+ Warnings were generated for the following samples.
+ GSM4586484 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM4586485 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM4586486 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM4586487 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM4586488 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM4586489 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM4586490 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM4586491 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM4586492 
+ Hint: Check the output file for more details. 
+ Warnings were generated for the following samples.
+ GSM4586493 
+ Hint: Check the output file for more details.
