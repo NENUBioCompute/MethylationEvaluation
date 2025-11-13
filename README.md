@@ -25,7 +25,7 @@ It bridges raw data processing, multi-clock evaluation, and online deployment in
 ### 🗳️ [DNAmDataPreprocessor](https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmDataPreprocessor)
 **Purpose**: Standardizes raw DNA methylation data for downstream analysis.
 **Key Features:**
-- Batch download and parsing of public datasets (GEO, TCGA, etc.)
+- Batch download and parsing of public datasets (GEO)
 - Automated handling of ".idat", ".txt", ".csv", and mixed-format inputs
 - Standardized Mapping and Validation of Phenotypic Data Based on Configurable Mapping Tables
 - A comprehensive standardization workflow encompassing beta value detection, missing value imputation, and matching with phenotypic data.
