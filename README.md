@@ -3,7 +3,7 @@
 A comprehensive platform for DNA methylation **data preprocessing**, **clock evaluation**, and **cloud-based visualization**.
 This repository integrates three main components:
 
-- ✨ [**DNAmDataPreprocessor**]([https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmDataPreprocessor) – Automated pipeline for downloading, parsing, and standardizing DNA methylation datasets.
+- ✨ [**DNAmDataPreprocessor**](https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmDataPreprocessor) – Automated pipeline for downloading, parsing, and standardizing DNA methylation datasets.
 
 - ✨ [**DNAmClocksEvaluation**](https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmClocksEvaluation) – Evaluation framework for benchmarking multiple epigenetic clocks across diverse datasets.
 
@@ -18,7 +18,7 @@ It bridges raw data processing, multi-clock evaluation, and online deployment in
 
 ## 📦 Components   
 
-### 🗳️ [DNAmDataPreprocessor]([https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmDataPreprocessor)
+### 🗳️ [DNAmDataPreprocessor](https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmDataPreprocessor)
 **Purpose**: Standardizes raw DNA methylation data for downstream analysis.
 **Key Features:**
 - Batch download and parsing of public datasets (GEO, TCGA, etc.)
