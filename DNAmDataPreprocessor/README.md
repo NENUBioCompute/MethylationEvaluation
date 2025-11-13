@@ -185,7 +185,7 @@ Specifies how categorical values are standardized:
 - **Original values**：Extract unique values from the target column in the parsed phenotype file.
 - **Standardized values**: Custom mapping values.
 - **Value codes**: "Tissue", "Disease", "Condition", "Age", "Gender", "Race". The six sheets respectively record the corresponding original values and standardized values under each label.
-- [ValueMapping.xlsx]() is our manually mapped template based on 142 datasets.
+- [ValueMapping.xlsx](https://github.com/NENUBioCompute/MethylationEvaluation/blob/main/DNAmDataPreprocessor/config/ValueMapping.xlsx) is our manually mapped template based on 142 datasets.
 
 ## 📚 Citation
 If you use DNAmClocksEvaluation in your research, please cite this repository appropriately:
