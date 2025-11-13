@@ -1,0 +1,3 @@
+/home/qujing/MethylationEvaluation/DNAmDataPreprocessor/data/raw/GSE38873_series_matrix.txt.gz
+/home/qujing/MethylationEvaluation/DNAmDataPreprocessor/data/raw/GSE72777_series_matrix.txt.gz
+/home/qujing/MethylationEvaluation/DNAmDataPreprocessor/data/raw/?acc=GSE72777&format=file&file=GSE72777%5FdatBetaNormalized%2Ecsv%2Egz

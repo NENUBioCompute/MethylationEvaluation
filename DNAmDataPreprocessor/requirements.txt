@@ -1,0 +1,54 @@
+# ============================================
+# DNAmClocksEvaluation Requirements
+# ============================================
+# This project requires both Python and R environments.
+# Please ensure that both are installed before running the tool.
+# Python version: >= 3.8
+# R version:     >= 4.1
+# --------------------------------------------
+
+# ============================================================
+# PYTHON ENVIRONMENT
+# ============================================================
+
+numpy==1.26.4
+pandas==2.2.2
+requests==2.32.3
+PyYAML==6.0.2
+openpyxl>=3.0.0
+rpy2 == 3.6.4   # For Python ↔ R interface
+
+# ============================================================
+# R ENVIRONMENT REQUIREMENTS
+# ============================================================
+# Minimum R version required
+# R >= 4.1.0
+
+# Required R packages:
+# (Please make sure to install these in your R environment)
+#
+# install.packages(c(
+#     "stringr",
+#     "data.table",
+#     "tools",
+#     "R.utils",
+#     "dplyr"
+# ))
+#
+# For Bioconductor packages:
+# if (!requireNamespace("BiocManager", quietly = TRUE))
+#     install.packages("BiocManager")
+#
+# BiocManager::install(c(
+#     "methyLImp2",
+#     "BiocParallel"
+# ))
+#
+# Note:
+# - methyLImp2 is used for DNA methylation data imputation.
+# - BiocParallel enables multi-threaded computation for large datasets.
+# - These R packages will be invoked internally via rpy2.
+
+# ============================================================
+# END OF FILE
+# ============================================================

@@ -1,0 +1,15 @@
+# DNAm数据下载列表
+# 格式说明：
+# - 每行一个URL
+# - 以#开头的是注释行
+# - 支持http/https协议
+
+# GSE38873 数据集 - 合并文件格式
+https://ftp.ncbi.nlm.nih.gov/geo/series/GSE38nnn/GSE38873/matrix/GSE38873_series_matrix.txt.gz
+
+# GSE67890 数据集 - 分开文件格式  
+https://ftp.ncbi.nlm.nih.gov/geo/series/GSE72nnn/GSE72777/matrix/GSE72777_series_matrix.txt.gz
+https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE72777&format=file&file=GSE72777%5FdatBetaNormalized%2Ecsv%2Egz
+
+# 大型文件（会自动断点续传）
+# https://ftp.ncbi.nlm.nih.gov/geo/series/GSE40nnn/GSE40279/matrix/GSE40279_series_matrix.txt.gz

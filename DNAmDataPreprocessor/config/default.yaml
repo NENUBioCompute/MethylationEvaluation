@@ -1,0 +1,32 @@
+# Download Configuration
+downloader:
+    download_dir: "./data/raw"
+    max_retries: 3
+    timeout: 600
+    use_multiprocessing: false
+    download_method: "requests"
+    downloaded_files_record: "./config/downloaded_files.txt"
+
+# Parsing Configuration
+parsing:
+    input_path: "./config/downloaded_files.txt"
+    output_dir: "./data/parsed"
+
+# pheno_standardization Configuration
+pheno_standardization:
+    data_mapping_file: "./config/DataMapping_case.xlsx"
+    value_mapping_file: "./config/ValueMapping.xlsx"
+    input_dir: "./data/parsed/pheno"
+    output_dir: "./data/standardized/pheno"
+
+# methyl_standardization Configuration
+methyl_standardization:
+    expression_input_dir: "./data/parsed/methyl"
+    pheno_input_dir: "./data/standardized/pheno" 
+    output_dir: "./data/standardized/methyl"
+
+# logging Configuration
+logging:
+    level: "INFO"
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    file: "./logs/pipeline.log"

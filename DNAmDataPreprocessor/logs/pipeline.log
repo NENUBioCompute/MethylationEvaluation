@@ -1,0 +1,16 @@
+2025-11-13 16:39:54,715 - core.pipeline - INFO - Downloader initialized successfully.
+2025-11-13 16:39:54,715 - core.pipeline - INFO - Data parser initialized successfully.
+2025-11-13 16:39:55,705 - core.pipeline - INFO - Phenotype standardizer initialized successfully.
+2025-11-13 16:39:55,705 - core.pipeline - INFO - DNA methylation normalizer initialized successfully.
+2025-11-13 16:39:55,705 - core.pipeline - INFO - Starting full preprocessing pipeline.
+2025-11-13 16:39:55,706 - core.pipeline - INFO - Starting data download process.
+2025-11-13 16:41:15,330 - core.pipeline - INFO - Data download completed. Success: 3, Failed: 0
+2025-11-13 16:41:15,330 - core.pipeline - INFO - Starting data parsing process.
+2025-11-13 16:46:52,373 - core.pipeline - INFO - Data parsing completed. Processed 2 datasets.
+2025-11-13 16:46:52,373 - core.pipeline - INFO - Starting mapping validation.
+2025-11-13 16:46:52,373 - core.pipeline - INFO - Mapping validation completed.
+2025-11-13 16:46:52,373 - core.pipeline - INFO - Starting phenotype data standardization.
+2025-11-13 16:46:52,887 - core.pipeline - INFO - Phenotype data standardization completed. Processed 2 datasets.
+2025-11-13 16:46:52,887 - core.pipeline - INFO - Starting DNA methylation data standardization.
+2025-11-13 16:57:19,863 - core.pipeline - INFO - DNA methylation data standardization completed. Processed 3 datasets.
+2025-11-13 16:57:19,863 - core.pipeline - INFO - Full preprocessing pipeline completed successfully.
