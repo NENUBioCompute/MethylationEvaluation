@@ -57,8 +57,8 @@ Core Dependencies:
 
 
 ## ⚙️ System Requirements
-- Python 3.8+
-- R 4.1+
+- Python 3.9+
+- R 4.5+
 - 8GB+ RAM (16GB recommended for large datasets)
 - 50GB+ free disk space
 
