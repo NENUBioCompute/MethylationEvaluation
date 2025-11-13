@@ -8,6 +8,7 @@ A comprehensive and modular pipeline for downloading, parsing, and standardizing
 
 DNAmDataPreprocessor is a modular and extensible Python framework for DNA methylation data preprocessing.
 It provides a reproducible and customizable way to preprocess large-scale methylation datasets (e.g., from GEO), from raw file download to fully standardized datasets ready for downstream analyses such as epigenetic clock modeling, biomarker discovery, and disease classification. The system is designed with modularity and flexibility in mind, allowing users to run the entire workflow or individual components as needed.
+
 ---
 
 ## 🧠 Features
