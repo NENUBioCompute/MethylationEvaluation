@@ -3,11 +3,11 @@
 A comprehensive platform for DNA methylation **data preprocessing**, **clock evaluation**, and **cloud-based visualization**.
 This repository integrates three main components:
 
-- ✨ (**DNAmDataPreprocessor**)[https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmDataPreprocessor] – Automated pipeline for downloading, parsing, and standardizing DNA methylation datasets.
+- ✨ [**DNAmDataPreprocessor**]([https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmDataPreprocessor) – Automated pipeline for downloading, parsing, and standardizing DNA methylation datasets.
 
-- ✨ (**DNAmClocksEvaluation**)[https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmClocksEvaluation] – Evaluation framework for benchmarking multiple epigenetic clocks across diverse datasets.
+- ✨ [**DNAmClocksEvaluation**](https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmClocksEvaluation) – Evaluation framework for benchmarking multiple epigenetic clocks across diverse datasets.
 
-- ✨ (**Webserver**)[http://www.dnamclock.com/#/] – An interactive cloud-based web platform for model visualization and biological age prediction.
+- ✨ [**Webserver**](http://www.dnamclock.com/#/) – An interactive cloud-based web platform for model visualization and biological age prediction.
 
 ---
 
@@ -18,8 +18,8 @@ It bridges raw data processing, multi-clock evaluation, and online deployment in
 
 ## 📦 Components   
 
-### 🗳️ DNAmDataPreprocessor
-**Purpose**: Standardizes raw DNA methylation data for downstream analysis. ([Quick Start])[https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmDataPreprocessor]
+### 🗳️ [DNAmDataPreprocessor]([https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmDataPreprocessor)
+**Purpose**: Standardizes raw DNA methylation data for downstream analysis.
 **Key Features:**
 - Batch download and parsing of public datasets (GEO, TCGA, etc.)
 - Automated handling of ".idat", ".txt", ".csv", and mixed-format inputs
@@ -29,8 +29,8 @@ It bridges raw data processing, multi-clock evaluation, and online deployment in
 Supported R packages:
 stringr, data.table, tools, R.utils, dplyr, methyLImp2, BiocParallel
 
-### 📊 DNAmClocksEvaluation
-**Purpose**: Benchmarks and compares multiple epigenetic clocks across datasets. ([Quick Start])[https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmClocksEvaluation]
+### 📊 [DNAmClocksEvaluation](https://github.com/NENUBioCompute/MethylationEvaluation/tree/main/DNAmClocksEvaluation)
+**Purpose**: Benchmarks and compares multiple epigenetic clocks across datasets.
 **Key Features:**
 - Supports 16+ biological clock models (R- and Python-based)
 - Unified evaluation API for performance comparison
@@ -40,9 +40,9 @@ Core Dependencies:
 - tensorflow, numpy, pandas, scikit-learn, EpigeneticPacemaker
 - BiocManager, data.table, MEAT, methylclock
 
-### 🌐 Webserver
+### 🌐 [Webserver](http://www.dnamclock.com/#/)
 
-**Purpose**: Provides an online interface for visualization and user interaction. ([Quick Start])[http://www.dnamclock.com/#/]
+**Purpose**: Provides an online interface for visualization and user interaction.
 **Key Features:**
 - Web-based biological age prediction
 - Interactive dashboards for multi-clock results
