@@ -521,9 +521,9 @@ parse_methylation_data <- function(input_path = "DownloadList.txt",
   
   # Use detected delimiter to read file
   if (grepl("\\.gz$", file_path)) {
-    dt <- fread(file_path, header = TRUE, data.table = FALSE, sep = sep)
+    dt <- fread(file_path, header = TRUE, data.table = FALSE, sep = sep, quote = "")
   } else {
-    dt <- fread(file_path, header = TRUE, data.table = FALSE, sep = sep)
+    dt <- fread(file_path, header = TRUE, data.table = FALSE, sep = sep, quote = "")
   }
   
   # Clean column names - remove empty names
